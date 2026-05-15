@@ -1,0 +1,1984 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Valida SICONFI — Hero [Landing]</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--surface); }
+  body {
+    border-left: 1px solid var(--border-1);
+    border-right: 1px solid var(--border-1);
+    min-height: 100vh;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--fg-1);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Fixed-size canvas mirror of Figma frame (1600×6149.651) */
+  .stage {
+    width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  /* ─── Header / top bar ─────────────────────────────── */
+  .topbar {
+    height: 64px;
+    border-bottom: 1px solid var(--border-1);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 215px;
+  }
+  .wordmark {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--brand-blue-deep);
+  }
+  .wordmark img { width: 34px; height: 28px; display: block; }
+  .wordmark span {
+    font: var(--t-wordmark);
+    letter-spacing: var(--tracking-wordmark);
+    color: var(--brand-blue-deep);
+  }
+  .nav { display: flex; gap: 32px; align-items: center; }
+  .nav a {
+    font: 500 14px/20px var(--font-sans);
+    letter-spacing: var(--tracking-meta);
+    color: var(--neutral-850);
+    text-decoration: none;
+  }
+  .nav a:hover { color: var(--brand-blue); }
+
+  /* ─── Buttons ───────────────────────────────────────── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px;
+    font: 500 14px/20px var(--font-sans);
+    letter-spacing: var(--tracking-meta);
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 120ms ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-stroke {
+    background: var(--white);
+    border-color: var(--neutral-200);
+    color: var(--fg-1);
+  }
+  .btn-stroke:hover { border-color: var(--neutral-300); background: var(--neutral-25); }
+  .btn-filled {
+    display: inline-flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    color: var(--white);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.00);
+    background: #335CFF;
+    box-shadow: 0 1px 0 0 #335CFF, 0 4px 4px 0 #E0E7FF;
+  }
+  .btn-filled:hover { background: var(--brand-blue-strong); }
+  .btn-lighter {
+    background: var(--white);
+    color: var(--brand-blue-deep);
+    border-color: var(--white);
+  }
+  .btn-lighter:hover { background: var(--blue-50); }
+  .btn-dark {
+    background: rgb(14,18,27);
+    color: var(--white);
+    border-color: rgb(14,18,27);
+  }
+  .btn-icon { width: 16px; height: 16px; flex: 0 0 16px; }
+  .btn-link {
+    background: transparent; border: 0; padding: 0; height: auto;
+    color: var(--neutral-500);
+  }
+  .btn-link:hover { color: var(--brand-blue); }
+
+  /* ─── Pill badge (Hero Badge / Landing) ─────────────── */
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px;
+    background: var(--white-warm);
+    border: 1px solid var(--border-blue);
+    border-radius: var(--r-badge);
+    box-shadow: var(--shadow-xs);
+    font: 500 14px/20px var(--font-sans);
+    letter-spacing: var(--tracking-meta);
+    color: var(--brand-ink);
+    white-space: nowrap;
+  }
+  .pill svg { width: 16px; height: 16px; }
+  .pill.on-brand {
+    background: transparent; border-color: var(--border-blue);
+    color: var(--fg-onbrand);
+  }
+  .pill.neutral {
+    background: var(--white);
+    border: 1px solid #E4E4E7;
+    color: var(--neutral-900);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    font: 600 13px/20px var(--font-sans);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .pill.neutral i {
+    font-size: 16px;
+    color: #335CFF;
+  }
+
+  /* ─── Hero section ──────────────────────────────────── */
+  .hero {
+    position: relative;
+    padding: 80px 188px;
+    overflow: hidden;
+    background: #F5F8FF;
+  }
+  .hero-inner { position: relative; max-width: 1112px; margin: 0 auto; }
+  .hero-headline {
+    text-align: center;
+    font: 500 56px/64px var(--font-display);
+    letter-spacing: var(--tracking-tight);
+    color: var(--neutral-900);
+    margin: 12px 0 0;
+  }
+  .hero-sub {
+    margin: 32px auto 0;
+    max-width: 754px;
+    text-align: center;
+    font: 400 16px/24px var(--font-sans);
+    letter-spacing: var(--tracking-body);
+    color: var(--neutral-800);
+  }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; margin-top: 64px; }
+  .hero-title-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
+  /* decorative diamond-grid SVG patches on either side of the hero headline */
+  .deco-grid { position: absolute; top: -22px; width: 316px; height: 280px; opacity: .1; pointer-events: none; }
+  .deco-grid.left  { left: -1px; }
+  .deco-grid.right { right: -1px; transform: scaleX(-1); }
+  .deco-grid .dot {
+    position: absolute; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--brand-blue); border: 13px solid var(--blue-100);
+    box-sizing: content-box;
+    left: 35px;
+  }
+  .deco-grid .dot.b { top: 105px; }
+  .deco-grid .dot.a { top: 0; }
+  .deco-grid svg { width: 100%; height: 100%; display: block; }
+
+  /* ─── Browser mock band (Property 1 = Default) ──────── */
+  .browser-band {
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .browser-band-panels {
+    position: relative;
+    line-height: 0;
+  }
+  .browser-panel {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .browser-panel.active {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+  }
+  .browser-band-tabs {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    z-index: 2;
+    padding-bottom: 6px;
+  }
+  .browser-tab-btn {
+    display: block;
+    height: 44px;
+    width: auto;
+    cursor: pointer;
+  }
+  .browser-tabs {
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    top: 12px;
+    display: flex; gap: 8px;
+    z-index: 2;
+  }
+  .browser-tab {
+    width: 156px; height: 40px;
+    background: var(--white);
+    border-radius: 10px 10px 0 0;
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 12px;
+    box-shadow: 0 -1px 0 var(--blue-50) inset;
+  }
+  .browser-tab .favicon {
+    width: 18px; height: 18px; border-radius: 4px; background: var(--blue-50); flex: 0 0 18px;
+    display: grid; place-items: center;
+  }
+  .browser-tab .favicon img { width: 12px; height: auto; }
+  .browser-tab .title {
+    font: 500 12px/16px var(--font-sans); color: var(--neutral-700);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
+  }
+  .browser-tab.inactive { background: rgba(255,255,255,0.55); }
+  .browser-tab.inactive .title { color: var(--neutral-500); }
+  .browser-tab .close {
+    width: 14px; height: 14px; display: grid; place-items: center; color: var(--neutral-400);
+    font: 700 12px/1 var(--font-sans);
+  }
+
+  .browser-window {
+    position: absolute;
+    left: 352px; top: 124px;
+    width: 896px; height: 451.5px;
+    border-radius: var(--r-lg);
+    background: var(--white);
+    border: 1px solid var(--border-2);
+    box-shadow: var(--shadow-brand-soft);
+    padding: 21px 21px 1px;
+    z-index: 2;
+  }
+  .bw-toolbar {
+    display: flex; align-items: center; gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-3);
+  }
+  /* D-tabs */
+  .bw-tabs {
+    display: flex; align-items: center; gap: 2px;
+    background: #F4F6FA;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 14px 0 4px;
+  }
+  .bw-tab {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px;
+    border-radius: 7px;
+    font: 500 12px/16px var(--font-sans);
+    color: var(--neutral-500);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+  .bw-tab svg { flex: 0 0 14px; opacity: 0.5; }
+  .bw-tab.active {
+    background: var(--white);
+    color: var(--neutral-900);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  }
+  .bw-tab.active svg { opacity: 1; }
+  .bw-traffic { display: flex; gap: 6px; }
+  .bw-traffic span { width: 10px; height: 10px; border-radius: 50%; background: var(--neutral-100); display: block; }
+  .bw-traffic span:nth-child(1) { background: #FF6058; }
+  .bw-traffic span:nth-child(2) { background: #FFBE2F; }
+  .bw-traffic span:nth-child(3) { background: #2BCA40; }
+  .bw-url {
+    flex: 1;
+    height: 26.5px;
+    background: var(--surface-3);
+    border: 1px solid var(--border-3);
+    border-radius: var(--r-xs);
+    padding: 0 13px;
+    display: flex; align-items: center;
+    font: 400 11px/16.5px var(--font-sans);
+    color: var(--neutral-300);
+  }
+  .bw-pill {
+    height: 23px; padding: 0 10px;
+    border-radius: var(--r-pill);
+    background: var(--blue-tint);
+    color: var(--brand-blue);
+    font: 700 10px/15px var(--font-sans);
+    display: inline-flex; align-items: center;
+  }
+
+  .bw-folder {
+    margin-top: 20px;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-3);
+  }
+  .bw-folder .label-caption {
+    font: 400 12px/16px var(--font-sans);
+    color: var(--neutral-500);
+  }
+  .bw-folder .label-row {
+    margin-top: 2px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .bw-folder .label-title {
+    font: 700 14px/20px var(--font-sans);
+    color: var(--neutral-950);
+  }
+  .bw-folder .count-pill {
+    background: var(--neutral-50);
+    border-radius: var(--r-pill);
+    padding: 2px 8px;
+    font: 400 12px/16px var(--font-sans);
+    color: var(--neutral-700);
+  }
+  .bw-folder .right { text-align: right; }
+  .bw-folder .right .top { font: 400 12px/16px var(--font-sans); color: var(--neutral-500); }
+  .bw-folder .right .bot { font: 700 12px/16px var(--font-sans); color: var(--danger-fg-2); display: inline-flex; align-items: center; gap: 4px; }
+  .bw-folder .right .bot svg { width: 10px; height: 10px; }
+
+  .bw-progress {
+    margin-top: 16px;
+    height: 6px; background: var(--neutral-50);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+  }
+  .bw-progress > div { height: 100%; background: var(--brand-blue); border-radius: var(--r-pill); }
+
+  .bw-rows { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .bw-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--border-3);
+    background: var(--white);
+  }
+  .bw-row.ok   {}
+  .bw-row.warn { background: rgba(254,242,242,0.5); border-color: var(--danger-border); }
+  .bw-row .left { display: flex; align-items: center; gap: 10px; }
+  .bw-row .code { font: var(--t-mono); color: var(--neutral-300); width: 36px; }
+  .bw-row .name { font: 400 12px/16px var(--font-sans); color: var(--neutral-850); }
+  .bw-status {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 9px;
+    border-radius: var(--r-pill);
+    font: 500 11px/16.5px var(--font-sans);
+  }
+  .bw-status.ok   { background: var(--success-bg); border: 1px solid var(--success-border); color: var(--success-fg); }
+  .bw-status.warn { background: var(--danger-bg); border: 1px solid var(--danger-border); color: var(--danger-fg); }
+  .bw-status svg { width: 10px; height: 10px; }
+
+  .bw-more {
+    text-align: center;
+    padding: 4px 0 0;
+    font: 400 11px/16.5px var(--font-sans);
+    color: var(--neutral-300);
+  }
+
+  .browser-overlay {
+    position: absolute; inset: 76px 0 0;
+    background: linear-gradient(rgba(46,97,255,0.2) 0%, rgba(46,97,255,0) 100%);
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  /* ─── Stats band ─────────────────────────────────────── */
+  .stats {
+    display: flex;
+    align-items: stretch;
+    padding: 0 108px;
+    background: var(--white);
+    border-top: 1px solid var(--border-1);
+    border-bottom: 1px solid var(--border-1);
+  }
+  .stat {
+    flex: 1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 2px;
+    padding: 24px 12px;
+    border-right: 1px solid var(--border-1);
+  }
+  .stat:first-child { border-left: 1px solid var(--border-1); }
+  .stat .n { font: 700 32px/100% var(--font-sans); color: var(--neutral-900); }
+  .stat .n.blue { color: var(--brand-blue); }
+  .stat .l { font: 400 16px/100% var(--font-sans); color: var(--neutral-700); text-align: center; }
+  .stat-divider { display: none; }
+
+  /* ─── How it works (problem section) ───────────────── */
+  .section {
+    position: relative;
+    padding: 80px 188px;
+    background: var(--white);
+  }
+  .section.flow { padding-bottom: 80px; }
+  .section-title {
+    display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+  }
+  .section-title .h {
+    font: 500 40px/48px var(--font-display);
+    letter-spacing: var(--tracking-tight);
+    color: var(--neutral-900);
+    max-width: 720px;
+  }
+  .section-title.center { align-items: center; text-align: center; }
+  .section-title.center .h { max-width: 1224px; }
+
+  .problem-steps {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .pcard {
+    border-radius: var(--r-xl);
+    background: var(--neutral-100);
+    overflow: hidden;
+    height: 448px;
+    position: relative;
+  }
+  .pcard-image {
+    position: absolute; inset: 2px 3px;
+    border-radius: var(--r-xl);
+    background:
+      linear-gradient(rgba(46,97,255,0) 0%, rgba(46,97,255,0.4) 100%),
+      url('./assets/hero-pattern.jpg') center / cover no-repeat;
+  }
+  .pcard-widget {
+    position: absolute; left: 13px; right: 13px; bottom: 10px;
+    border-radius: var(--r-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+    padding: 16px 20px;
+    display: flex; flex-direction: column; gap: 16px;
+    height: 188px;
+  }
+  .pcard-widget .ttl { font: 700 14px/20px var(--font-sans); color: var(--fg-2); letter-spacing: var(--tracking-meta); }
+  .pcard-widget .desc { font: 400 14px/20px var(--font-sans); color: rgb(86,87,89); letter-spacing: var(--tracking-meta); }
+  .pcard-widget .num-pill {
+    margin-top: auto;
+    display: block;
+    width: 34px; height: 24px;
+  }
+
+  /* ─── Divider [Landing] ──────────────────────────────── */
+  .landing-divider {
+    height: 20px;
+    display: flex; align-items: center; gap: 24px;
+    padding: 0;
+    background: var(--white);
+  }
+  .landing-divider .line {
+    flex: 1; height: 1px; background: var(--border-1);
+  }
+  .landing-divider svg { width: 20px; height: 20px; color: rgb(209,209,209); }
+
+  /* ─── Flow / D1 timeline ─────────────────────────────── */
+  .flow-wrap {
+    margin-top: 48px;
+    position: relative;
+    width: 880px; margin-left: auto; margin-right: auto;
+    min-height: 998px;
+  }
+  .flow-cards { display: flex; flex-direction: column; gap: 50px; width: 408px; }
+  .flow-card {
+    width: 408px; height: 212px;
+    border-radius: var(--r-lg);
+    background: var(--surface-2);
+    overflow: hidden;
+    position: relative;
+    padding: 24px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .flow-card.flow-card-svg {
+    padding: 0;
+    height: auto;
+  }
+  .flow-card .label {
+    font: 500 12px/16px var(--font-sans); color: var(--neutral-500);
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .flow-card .ttl {
+    font: 700 22px/28px var(--font-sans); color: var(--fg-2); margin-top: 6px;
+  }
+  .flow-rail {
+    position: absolute; left: 472px; top: 10px;
+    width: 24px; height: 798px;
+  }
+  .flow-rail::before {
+    content: ""; position: absolute; left: 12px; top: 28px; bottom: 6px;
+    width: 1px; background: var(--blue-50);
+  }
+  .flow-rail .dot {
+    position: absolute; left: 0; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--white-warm); border: 1px solid var(--brand-blue);
+    display: grid; place-items: center;
+  }
+  .flow-rail .dot::after {
+    content: ""; width: 13.33px; height: 13.33px; border-radius: 50%; background: var(--brand-blue);
+  }
+  .flow-rail .dot.empty { border-color: var(--blue-50); }
+  .flow-rail .dot.empty::after { background: transparent; }
+  .flow-rail .dot.d1 { top: 0; }
+  .flow-rail .dot.d2 { top: 262px; }
+  .flow-rail .dot.d3 { top: 524px; }
+  .flow-rail .dot.d4 { top: 786px; }
+  .flow-rail .seg {
+    position: absolute; left: 12px; width: 1px;
+    background: var(--brand-blue);
+    transition: height 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .flow-rail .seg.s1 { top: 24px; height: 0; }
+  .flow-rail .dot {
+    transition: background 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
+  }
+  .flow-rail .dot.active {
+    background: var(--white-warm);
+    border-color: var(--brand-blue);
+    box-shadow: 0 0 0 4px rgba(46,97,255,0.12);
+  }
+  .flow-rail .dot.active::after {
+    background: var(--brand-blue);
+  }
+
+  .flow-text { width: 320px; display: flex; flex-direction: column; gap: 50px; position: absolute; left: 560px; top: 0; }
+  .flow-step { display: flex; flex-direction: column; gap: 12px; height: 212px; justify-content: center; }
+  .flow-step .num {
+    color: var(--brand-blue);
+    font: 700 14px/20px var(--font-sans);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .flow-step .num.muted { color: var(--neutral-500); }
+  .flow-step .h {
+    font: 700 22px/28px var(--font-sans); color: var(--neutral-900); letter-spacing: var(--tracking-tight);
+  }
+  .flow-step .d {
+    font: 400 14px/20px var(--font-sans); color: var(--neutral-800); letter-spacing: var(--tracking-meta);
+  }
+  .flow-step .icon {
+    width: 48px; height: 48px;
+    flex: 0 0 48px;
+    background: #EAEFFF;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    box-shadow: 0 0 0 1.5px #E0E7FF, 0 1px 2px rgba(10,13,20,0.04);
+    display: grid; place-items: center;
+    color: #2E61FF;
+  }
+
+  /* ─── Testimonial ──────────────────────────────────── */
+  .testimonial-section { padding: 96px 188px; }
+  .t-head { display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+  .t-head .h {
+    font: 700 48px/56px var(--font-display);
+    letter-spacing: var(--tracking-tight);
+    color: var(--neutral-900);
+  }
+  .t-content { margin-top: 48px; display: grid; grid-template-columns: 288px 1fr; gap: 12px; }
+  .t-portrait {
+    position: relative; height: 372px; border-radius: var(--r-xl); overflow: hidden;
+    background: var(--surface-2);
+    box-shadow: var(--shadow-image-card);
+  }
+  .t-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .t-portrait .overlay {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 120px;
+    background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
+    backdrop-filter: blur(4px);
+  }
+  .t-portrait .change {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    bottom: 24px;
+    display: flex; gap: 4px;
+  }
+  .t-portrait .change button {
+    border: 0; background: rgba(255,255,255,0.16); backdrop-filter: blur(4px);
+    width: 44px; height: 24px; padding: 0; border-radius: var(--r-pill);
+    color: var(--white);
+    display: grid; place-items: center;
+    cursor: pointer;
+  }
+  .t-portrait .change svg { width: 20px; height: 20px; }
+
+  .t-card {
+    height: 372px;
+    border-radius: var(--r-xl);
+    background: var(--surface-2);
+    padding: 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .t-name { display: flex; align-items: flex-start; gap: 24px; justify-content: space-between; }
+  .t-name .who .n { font: 500 16px/24px var(--font-sans); color: var(--neutral-900); letter-spacing: var(--tracking-body); }
+  .t-name .who .r { font: 500 14px/20px var(--font-sans); color: var(--neutral-400); }
+  .t-name img { width: 93px; height: 30.74px; object-fit: contain; }
+  .t-quote {
+    font: 500 32px/40px var(--font-display);
+    color: var(--neutral-800);
+    letter-spacing: -0.005em;
+  }
+
+  /* ─── Closing CTA card ───────────────────────────── */
+  .cta-section { padding: 38px 188px 38px; background: var(--white); }
+  .cta-card {
+    position: relative;
+    height: 399px;
+    border-radius: var(--r-lg);
+    background: var(--brand-blue);
+    overflow: hidden;
+    padding: 48px;
+    color: var(--white);
+  }
+  .cta-card .pill { background: transparent; color: var(--fg-onbrand); }
+  .cta-h {
+    font: 500 32px/40px var(--font-display);
+    letter-spacing: -0.005em;
+    max-width: 455px;
+    margin-top: 48px;
+  }
+  .cta-sub {
+    font: 500 16px/24px var(--font-sans);
+    color: var(--fg-onbrand-soft);
+    max-width: 455px;
+    margin-top: 32px;
+  }
+  .cta-actions { display: flex; gap: 16px; margin-top: 32px; }
+  .cta-actions .btn-stroke {
+    background: rgb(1,14,29); border-color: rgba(255,255,255,0.18); color: var(--white);
+  }
+  .cta-actions .btn-stroke:hover { background: rgb(2,22,46); }
+  /* grafismo decorativo no CTA */
+  .cta-deco {
+    position: absolute; right: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 336px; height: 399px;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* ─── Footer ───────────────────────────────────────── */
+  .footer { padding: 80px 188px; background: var(--white); }
+  .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 80px; }
+  .footer .wordmark img { filter: none; }
+  .footer-contact {
+    margin-top: 32px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 500 14px/20px var(--font-sans);
+    color: var(--neutral-500);
+  }
+  .footer-contact svg { width: 14px; height: 14px; }
+  .footer-social { margin-top: 32px; display: flex; gap: 16px; }
+  .footer-social a {
+    width: 32px; height: 32px; border-radius: 8px;
+    border: 1px solid var(--border-2);
+    display: grid; place-items: center;
+    color: var(--neutral-700);
+    background: var(--white);
+  }
+  .footer-social a:hover { color: var(--brand-blue); border-color: var(--brand-blue); }
+  .footer-social svg { width: 16px; height: 16px; }
+  .footer-copy {
+    margin-top: 32px;
+    font: 500 14px/20px var(--font-sans);
+    color: var(--neutral-400);
+  }
+  .footer-list { display: flex; flex-direction: column; gap: 20px; min-width: 103px; }
+  .footer-list a {
+    font: 500 14px/20px var(--font-sans);
+    color: var(--neutral-850);
+    text-decoration: none;
+  }
+  .footer-list a:hover { color: var(--brand-blue); }
+
+  /* ─── As Verificações ───────────────────────────────── */
+  .verificacoes-section { padding: 80px 188px; background: var(--white); }
+
+  .verif-layout {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* Left list */
+  .verif-list { display: flex; flex-direction: column; }
+  .verif-divider { height: 1px; background: var(--border-1); margin: 0; }
+
+  .verif-item {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 28px 0;
+  }
+
+  .d-badge-wrap {
+    flex: 0 0 52px;
+    width: 52px; height: 52px;
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  .d-badge {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--neutral-50);
+    border: 1.5px solid var(--border-1);
+    display: grid; place-items: center;
+    font: 700 13px/1 var(--font-sans);
+    color: var(--neutral-500);
+    letter-spacing: 0.02em;
+    position: relative;
+    z-index: 1;
+  }
+  .d-badge.active {
+    background: var(--blue-50);
+    border-color: transparent;
+    color: var(--brand-blue);
+  }
+  .d-progress-ring {
+    position: absolute;
+    inset: 0;
+    width: 52px; height: 52px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+  }
+  /* Track (background ring) */
+  .d-progress-ring .ring-track {
+    fill: none;
+    stroke: rgba(46, 97, 255, 0.12);
+    stroke-width: 3;
+  }
+  /* Fill ring */
+  .d-progress-ring .ring-fill {
+    fill: none;
+    stroke: #2E61FF;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 138.23;
+    stroke-dashoffset: 138.23;
+    transition: none;
+    filter: drop-shadow(0 0 3px rgba(46, 97, 255, 0.5));
+  }
+
+  .verif-item-body { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .verif-item-title { font: 700 16px/24px var(--font-sans); color: var(--neutral-900); }
+  .verif-item-desc  { font: 400 14px/22px var(--font-sans); color: var(--neutral-700); }
+  .verif-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+
+  .vtag {
+    display: inline-flex; align-items: center;
+    height: 24px; padding: 0 10px;
+    border-radius: var(--r-pill);
+    font: 500 12px/1 var(--font-sans);
+  }
+  .vtag.blue   { background: var(--blue-50); color: var(--brand-blue); }
+  .vtag.orange { background: #FFF4E5; color: #B45309; }
+
+  /* Right preview */
+  .verif-preview-wrap {
+    position: relative;
+    border-radius: var(--r-xl);
+    background: linear-gradient(135deg, #EEF2FF 0%, #E8EDFF 100%);
+    overflow: hidden;
+    padding: 32px;
+    min-height: 420px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .verif-preview-bg {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .verif-preview-bg svg { width: 100%; height: 100%; }
+
+  .verif-card {
+    position: relative; z-index: 1;
+    background: var(--white);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--border-2);
+    box-shadow: var(--shadow-card);
+    padding: 24px;
+    width: 100%;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  /* Linear buffer progress bar */
+  .verif-linear-progress {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(46, 97, 255, 0.10);
+    position: relative;
+    overflow: hidden;
+    margin: -8px 0;
+  }
+  .verif-linear-progress .vlp-buffer {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    border-radius: 2px;
+    background: rgba(46, 97, 255, 0.25);
+    width: 0%;
+    transition: width 5s linear;
+  }
+  .verif-linear-progress .vlp-fill {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    border-radius: 2px;
+    background: #2E61FF;
+    width: 0%;
+    transition: width 5s linear;
+  }
+
+  .verif-card-header {
+    font: 600 10px/16px var(--font-sans);
+    letter-spacing: 0.08em;
+    color: var(--neutral-400);
+    text-transform: uppercase;
+  }
+
+  .verif-rows { display: flex; flex-direction: column; gap: 0; }
+  .verif-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-3);
+  }
+  .verif-row:last-child { border-bottom: none; }
+
+  .verif-code {
+    font: 400 11px/16px var(--font-mono, monospace);
+    color: var(--neutral-400);
+    flex: 0 0 36px;
+  }
+  .verif-name {
+    font: 400 13px/20px var(--font-sans);
+    color: var(--neutral-850);
+    flex: 1;
+  }
+  .vstatus {
+    display: inline-flex; align-items: center;
+    padding: 3px 10px;
+    border-radius: var(--r-pill);
+    font: 500 11px/16px var(--font-sans);
+    flex: 0 0 auto;
+  }
+  .vstatus.ok   { background: #DCFCE7; color: #15803D; border: 1px solid #BBF7D0; }
+  .vstatus.fail { background: #FEE2E2; color: #DC2626; border: 1px solid #FECACA; }
+
+  .verif-card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 4px;
+  }
+  .vf-passed { font: 500 13px/20px var(--font-sans); color: var(--neutral-700); }
+  .vf-fix    { font: 700 13px/20px var(--font-sans); color: #DC2626; }
+
+  .verif-exemplos { display: flex; flex-direction: column; gap: 8px; }
+  .ve-label {
+    font: 600 10px/16px var(--font-sans);
+    letter-spacing: 0.08em;
+    color: var(--neutral-400);
+    text-transform: uppercase;
+  }
+  .ve-list {
+    margin: 0; padding: 0;
+    list-style: none;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .ve-list li {
+    font: 400 13px/20px var(--font-sans);
+    color: var(--neutral-700);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ve-list li::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--brand-blue);
+    flex: 0 0 6px;
+  }
+
+  .verif-count { display: flex; align-items: baseline; gap: 6px; }
+  .vc-num   { font: 700 28px/1 var(--font-sans); color: var(--neutral-900); }
+  .vc-label { font: 400 13px/20px var(--font-sans); color: var(--neutral-500); }
+
+  /* Subtle responsive scaling so it can be previewed on smaller cards */
+  @media (max-width: 1660px) {
+    .stage { transform-origin: top left; transform: scale(calc(100vw / 1600)); }
+    body { width: 100vw; overflow-x: hidden; min-height: calc(6149.651px * (100vw / 1600)); }
+  }
+
+  /* ═══════════════════════════════════════════════
+     RESPONSIVO — Mobile (≤ 768px)
+  ═══════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* Stage / layout base */
+    .stage { width: 100%; }
+    body { border-left: none; border-right: none; }
+
+    /* ── Topbar ── */
+    .topbar {
+      padding: 0 20px;
+      height: 56px;
+    }
+    .nav { display: none; }
+    .topbar .btn-stroke { display: none; }
+
+    /* ── Hero ── */
+    .hero { padding: 48px 20px 40px; }
+    .hero-headline { font-size: 32px; line-height: 40px; }
+    .hero-sub { font-size: 15px; line-height: 22px; margin-top: 20px; }
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 36px;
+      gap: 12px;
+    }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+    .deco-grid { display: none; }
+
+    /* ── Browser band ── */
+    .browser-band { display: none; }
+
+    /* ── Browser band / tabs ── */
+    .browser-band-tabs {
+      position: static;
+      transform: none;
+      left: auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 12px 16px 0;
+      gap: 6px;
+      justify-content: flex-start;
+      width: 100%;
+    }
+    .browser-band-tabs::-webkit-scrollbar { display: none; }
+    .browser-tab-btn { height: 36px; flex-shrink: 0; }
+    .browser-band-panels { overflow: hidden; }
+
+    /* ── Stats ── */
+    .stats {
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .stat {
+      flex: 1 1 50%;
+      border-right: 1px solid var(--border-1);
+      border-bottom: 1px solid var(--border-1);
+      padding: 20px 8px;
+    }
+    .stat:first-child { border-left: none; }
+    .stat:nth-child(2) { border-right: none; }
+    .stat .n { font-size: 24px; }
+    .stat .l { font-size: 13px; }
+
+    /* ── Sections ── */
+    .section { padding: 48px 20px; }
+    .section-title .h { font-size: 28px; line-height: 36px; }
+    .section.flow { padding-bottom: 48px; }
+
+    /* ── Problem cards ── */
+    .problem-steps {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .pcard { height: 320px; }
+
+    /* ── Flow section ── */
+    .flow-wrap {
+      width: 100%;
+      min-height: auto;
+      margin: 28px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .flow-rail { display: none; }
+
+    /* Intercalar: step 1, card 1, step 2, card 2 … */
+    .flow-cards, .flow-text {
+      position: static;
+      width: 100%;
+      left: auto; top: auto;
+      display: contents; /* dissolve containers — filhos participam direto do flow-wrap */
+    }
+    .flow-step {
+      height: auto;
+      padding: 24px 0 16px;
+      gap: 8px;
+    }
+    .flow-card { width: 100%; margin-bottom: 32px; }
+
+    /* Ordenar: step-N antes do card-N */
+    .flow-step[data-flow-step="1"] { order: 1; }
+    [data-flow-card="1"]           { order: 2; }
+    .flow-step[data-flow-step="2"] { order: 3; }
+    [data-flow-card="2"]           { order: 4; }
+    .flow-step[data-flow-step="3"] { order: 5; }
+    [data-flow-card="3"]           { order: 6; }
+    .flow-step[data-flow-step="4"] { order: 7; }
+    [data-flow-card="4"]           { order: 8; }
+
+    /* ── Verificações ── */
+    .verificacoes-section { padding: 48px 20px; }
+    .verif-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .verif-preview-wrap { display: none; }
+    .verif-item { padding: 20px 0; gap: 14px; }
+
+    /* ── Testimonial ── */
+    .testimonial-section { padding: 48px 20px; }
+    .t-content {
+      grid-template-columns: 1fr;
+      margin-top: 28px;
+    }
+    .t-portrait { height: 240px; }
+    .t-card {
+      height: auto;
+      padding: 28px 24px;
+      gap: 24px;
+    }
+    .t-quote { font-size: 22px; line-height: 30px; }
+    .t-head .h { font-size: 28px; line-height: 36px; }
+
+    /* ── CTA ── */
+    .cta-section { padding: 20px; }
+    .cta-card { height: auto; padding: 32px 24px; }
+    .cta-h { font-size: 24px; line-height: 32px; margin-top: 28px; max-width: 100%; }
+    .cta-sub { font-size: 15px; max-width: 100%; margin-top: 20px; }
+    .cta-actions { flex-direction: column; gap: 10px; }
+    .cta-actions .btn { width: 100%; justify-content: center; }
+    .cta-deco { display: none; }
+
+    /* ── Footer ── */
+    .footer { padding: 48px 20px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+
+    .topbar-menu-btn { display: flex !important; }
+    .nav {
+      position: fixed;
+      top: 56px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-1);
+      flex-direction: column;
+      gap: 0;
+      z-index: 100;
+      padding: 8px 0;
+    }
+    .nav a {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-1);
+    }
+    .nav a:last-child { border-bottom: none; }
+
+    /* ── Topbar hamburger placeholder ── */
+    .topbar-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border-1);
+      background: var(--white);
+      cursor: pointer;
+    }
+    .topbar-menu-btn svg { width: 20px; height: 20px; color: var(--neutral-700); }
+  }
+
+  /* Tablet (769px – 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .stage { width: 100%; }
+    body { border-left: none; border-right: none; }
+    .topbar { padding: 0 32px; }
+    .hero { padding: 64px 48px; }
+    .hero-headline { font-size: 40px; line-height: 48px; }
+    .section { padding: 64px 48px; }
+    .verificacoes-section { padding: 64px 48px; }
+    .testimonial-section { padding: 64px 48px; }
+    .cta-section { padding: 32px 48px; }
+    .footer { padding: 64px 48px; }
+    .problem-steps { grid-template-columns: repeat(2, 1fr); }
+    .flow-wrap { width: 100%; }
+    .flow-cards { width: 45%; }
+    .flow-text { width: 45%; left: 55%; }
+    .t-content { grid-template-columns: 240px 1fr; }
+    .stats { padding: 0 32px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="stage" data-screen-label="01 Hero [Landing]">
+
+  <!-- ═══════════════ Header + Hero + Browser + Stats ═══════════════ -->
+  <section data-screen-label="header" style="position: relative;">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="wordmark">
+        <img src="assets/Logo.svg" alt="" />
+        <span>Validador SICONFI</span>
+      </div>
+      <nav class="nav">
+        <a href="#como">Como funciona</a>
+        <a href="#para-quem">Para quem</a>
+        <a href="#planos">Planos</a>
+      </nav>
+      <a href="#contato" class="btn btn-stroke" style="width: 140px;">Fale conosco</a>
+      <button class="topbar-menu-btn" aria-label="Menu" style="display:none;" onclick="this.closest('header').querySelector('.nav').style.display = this.closest('header').querySelector('.nav').style.display === 'flex' ? 'none' : 'flex';">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-title-wrap">
+          <!-- decorative diamond grids -->
+          <div class="deco-grid left" aria-hidden="true">
+            <svg viewBox="0 0 316 280">
+              <g fill="none" stroke="rgb(46,97,255)" stroke-width="1">
+                <pattern id="dg-l" width="35" height="35" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <path d="M0 0 L35 0" />
+                  <path d="M0 0 L0 35" />
+                </pattern>
+                <rect width="316" height="280" fill="url(#dg-l)" />
+              </g>
+            </svg>
+            <span class="dot a"></span><span class="dot b"></span>
+          </div>
+          <div class="deco-grid right" aria-hidden="true">
+            <svg viewBox="0 0 316 280">
+              <g fill="none" stroke="rgb(46,97,255)" stroke-width="1">
+                <pattern id="dg-r" width="35" height="35" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <path d="M0 0 L35 0" />
+                  <path d="M0 0 L0 35" />
+                </pattern>
+                <rect width="316" height="280" fill="url(#dg-r)" />
+              </g>
+            </svg>
+            <span class="dot a"></span><span class="dot b"></span>
+          </div>
+
+          <span class="pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="color: var(--brand-blue)"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.415L11.003 16z"/></svg>
+            Ferramenta Independente
+          </span>
+
+          <h1 class="hero-headline" style="max-width: 966px;">
+            Evite perder pontos no <span style="color:#2E61FF; font-weight:700;">CAPAG</span> por erros que podem ser prevenidos.
+          </h1>
+        </div>
+
+        <p class="hero-sub">
+          O ValidaSICONFI roda as verificações <span style="color:#364153; font-weight:700;">D1</span>, <span style="color:#364153; font-weight:700;">D2</span>, <span style="color:#364153; font-weight:700;">D3</span> e <span style="color:#364153; font-weight:700;">D4</span> nos seus arquivos antes do envio e
+          entrega um relatório completo para você corrigir com segurança.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-filled">
+            Falar com nossa equipe
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Browser band -->
+    <div class="browser-band">
+      <div class="browser-band-panels">
+        <img src="assets/Section 1.svg" alt="Seção 1" class="browser-panel active" data-panel="1" />
+        <img src="assets/Section 2.svg" alt="Seção 2" class="browser-panel" data-panel="2" />
+        <img src="assets/Section 3.svg" alt="Seção 3" class="browser-panel" data-panel="3" />
+        <img src="assets/Section 4.svg" alt="Seção 4" class="browser-panel" data-panel="4" />
+      </div>
+      <div class="browser-band-tabs">
+        <img src="assets/Buttons-1.1.svg" alt="SICONFI · Início" class="browser-tab-btn active" data-tab="1" />
+        <img src="assets/Buttons-2.svg" alt="D1 — Entrega · Diagnóstico" class="browser-tab-btn" data-tab="2" />
+        <img src="assets/Buttons-3.svg" alt="D2 — Cobertura" class="browser-tab-btn" data-tab="3" />
+        <img src="assets/Buttons-4.svg" alt="Relatórios anteriores" class="browser-tab-btn" data-tab="4" />
+
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="n blue">162</div>
+        <div class="l">verificações implementadas</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="n blue">57</div>
+        <div class="l">Impactam o CAPAG</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="n blue">5.500+</div>
+        <div class="l">Municípios no Brasil</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="n blue">&lt; 1 min</div>
+        <div class="l">Para o diagnóstico</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ How It Works — Problem ═══════════════ -->
+  <section class="section" data-screen-label="02 problema">
+    <div class="section-title">
+      <span class="pill neutral">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.666 1.64905L15.3327 7.99989L11.666 14.3508H4.33268L0.666016 7.99989L4.33268 1.64905H11.666ZM10.8962 2.98238H5.10248L2.20562 7.99989L5.10248 13.0174H10.8962L13.7931 7.99989L10.8962 2.98238ZM5.75534 5.44649L6.91002 4.77982L10.2433 10.5533L9.08868 11.22L5.75534 5.44649Z" fill="#2E61FF"/></svg>
+        O PROBLEMA
+      </span>
+      <div class="h" style="text-align: left;">O erro que custa caro só aparece <span style="color:#2E61FF;">depois do envio.</span></div>
+    </div>
+
+    <div class="problem-steps">
+      <article class="pcard">
+        <div class="pcard-image"></div>
+        <div class="pcard-widget">
+          <div class="ttl">Ciclo reativo e punitivo</div>
+          <div class="desc">O município envia, o SICONFI reprova, a retificação conta negativamente no D1. O mesmo erro é pago duas vezes.</div>
+          <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">01</text><defs><filter id="sh"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="pcard-image" style="background-image: url('./assets/imagem 2.png'); background-size: cover; background-position: center;"></div>
+        <div class="pcard-widget">
+          <div class="ttl">Inconsistência invisível</div>
+          <div class="desc">SI + MOV ≠ SF, saldos negativos indevidos, contas sem natureza. Erros que o ERP não detecta mas o SICONFI reprova.</div>
+          <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh2)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">02</text><defs><filter id="sh2"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="pcard-image" style="background-image: url('./assets/imagem 3.png'); background-size: cover; background-position: center;"></div>
+        <div class="pcard-widget">
+          <div class="ttl">CAPAG em risco</div>
+          <div class="desc">Pontuação baixa bloqueia crédito, aval da união e transferências; um arquivo mal enviado compromete o orçamento.</div>
+          <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh3)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">03</text><defs><filter id="sh3"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="pcard-image" style="background-image: url('./assets/imagem 4.png'); background-size: cover; background-position: center;"></div>
+        <div class="pcard-widget">
+          <div class="ttl">4 docs, zero cruzamento</div>
+          <div class="desc">MSC, DCA, RREO e RGF precisam ser consistentes entre si. Sem validador, é impossível checar manualmente.</div>
+          <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh4)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">04</text><defs><filter id="sh4"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════ Divider ═══════════════ -->
+  <div class="landing-divider">
+    <div class="line"></div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+    <div class="line"></div>
+  </div>
+
+  <!-- ═══════════════ Flow: D1 → D4 in < 1 min ═══════════════ -->
+  <section class="section flow" data-screen-label="03 fluxo">
+    <div class="section-title center">
+      <span class="pill">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4715 1.52856L10.5287 2.47137L12.0573 3.99997H8.6668V5.3333H12.0573L10.5287 6.86189L11.4715 7.80469L14.6096 4.66663L11.4715 1.52856ZM6.33343 4.66663C6.33343 3.74616 5.58724 2.99996 4.66677 2.99996C3.74629 2.99996 3.0001 3.74616 3.0001 4.66663C3.0001 5.58711 3.74629 6.3333 4.66677 6.3333C5.58724 6.3333 6.33343 5.58711 6.33343 4.66663ZM7.6668 4.66663C7.6668 6.32349 6.32362 7.66663 4.66677 7.66663C3.00991 7.66663 1.66677 6.32349 1.66677 4.66663C1.66677 3.00978 3.00991 1.66663 4.66677 1.66663C6.32362 1.66663 7.6668 3.00978 7.6668 4.66663ZM3.94291 12L5.47151 13.5286L4.52869 14.4714L1.39062 11.3333L4.52869 8.19522L5.47151 9.13802L3.94291 10.6666H7.33347V12H3.94291ZM10.0001 12.6666H12.6668V9.99996H10.0001V12.6666ZM8.6668 9.33329C8.6668 8.96509 8.96527 8.66663 9.33347 8.66663H13.3335C13.7016 8.66663 14.0001 8.96509 14.0001 9.33329V13.3333C14.0001 13.7015 13.7016 14 13.3335 14H9.33347C8.96527 14 8.6668 13.7015 8.6668 13.3333V9.33329Z" fill="#2E61FF"/></svg>
+        FLUXO
+      </span>
+      <div class="h" style="text-align: left; color: var(--brand-ink);">Da MSC ao diagnóstico em <span style="color:#2E61FF;">menos de 1 minuto.</span></div>
+    </div>
+
+    <div class="flow-wrap">
+      <div class="flow-cards">
+        <div class="flow-card flow-card-svg" data-flow-card="1">
+          <img src="assets/Card.png" alt="Card 1" style="display: block; width: 100%; height: auto;" />
+        </div>
+        <div class="flow-card flow-card-svg" data-flow-card="2">
+          <img src="assets/Card 2.svg" alt="Card 2" style="display: block; width: 100%; height: auto;" />
+        </div>
+        <div class="flow-card flow-card-svg" data-flow-card="3">
+          <img src="assets/Card 3.svg" alt="Card 3" style="display: block; width: 100%; height: auto;" />
+        </div>
+        <div class="flow-card flow-card-svg" data-flow-card="4">
+          <img src="assets/Card 4.svg" alt="Card 4" style="display: block; width: 100%; height: auto;" />
+        </div>
+      </div>
+
+      <div class="flow-rail" aria-hidden="true">
+        <div class="dot d1" id="flow-dot-1"></div>
+        <div class="seg s1" id="flow-seg"></div>
+        <div class="dot empty d2" id="flow-dot-2"></div>
+        <div class="dot empty d3" id="flow-dot-3"></div>
+        <div class="dot empty d4" id="flow-dot-4"></div>
+      </div>
+
+      <div class="flow-text">
+        <div class="flow-step" id="flow-step-1" data-flow-step="1">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19ZM13 9V16H11V9H6L12 3L18 9H13Z" fill="#2E61FF"/></svg>
+          </div>
+          <div class="h">Envie os arquivos</div>
+          <div class="d">Faça upload da MSC, DCA, RREO e RGF do exercício. Aceitamos os formatos oficiais entregues ao SICONFI.</div>
+          <div class="num">Passo 1</div>
+        </div>
+        <div class="flow-step" id="flow-step-2" data-flow-step="2">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7C5 6.17157 5.67157 5.5 6.5 5.5C7.32843 5.5 8 6.17157 8 7C8 7.82843 7.32843 8.5 6.5 8.5C5.67157 8.5 5 7.82843 5 7ZM6.5 3.5C4.567 3.5 3 5.067 3 7C3 8.933 4.567 10.5 6.5 10.5C8.433 10.5 10 8.933 10 7C10 5.067 8.433 3.5 6.5 3.5ZM12 8H20V6H12V8ZM16 17C16 16.1716 16.6716 15.5 17.5 15.5C18.3284 15.5 19 16.1716 19 17C19 17.8284 18.3284 18.5 17.5 18.5C16.6716 18.5 16 17.8284 16 17ZM17.5 13.5C15.567 13.5 14 15.067 14 17C14 18.933 15.567 20.5 17.5 20.5C19.433 20.5 21 18.933 21 17C21 15.067 19.433 13.5 17.5 13.5ZM4 16V18H12V16H4Z" fill="#2E61FF"/></svg>
+          </div>
+          <div class="h">Configure o contexto</div>
+          <div class="d">Informe o tipo de ente federativo, o estado, o exercício e o período de referência. Pronto para validar.</div>
+          <div class="num muted" id="flow-num-2">Passo 2</div>
+        </div>
+        <div class="flow-step" id="flow-step-3" data-flow-step="3">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L20.2169 2.82598C20.6745 2.92766 21 3.33347 21 3.80217V13.7889C21 15.795 19.9974 17.6684 18.3282 18.7812L12 23L5.6718 18.7812C4.00261 17.6684 3 15.795 3 13.7889V3.80217C3 3.33347 3.32553 2.92766 3.78307 2.82598L12 1ZM12 3.04879L5 4.60434V13.7889C5 15.1263 5.6684 16.3752 6.7812 17.1171L12 20.5963L17.2188 17.1171C18.3316 16.3752 19 15.1263 19 13.7889V4.60434L12 3.04879ZM16.4524 8.22183L17.8666 9.63604L11.5026 16L7.25999 11.7574L8.67421 10.3431L11.5019 13.1709L16.4524 8.22183Z" fill="#2E61FF"/></svg>
+          </div>
+          <div class="h">Validação automática</div>
+          <div class="d">O motor roda as 137 regras das dimensões D1, D2, D3 e D4, cruzando todos os arquivos entre si em menos de 1 minuto.</div>
+          <div class="num muted">Passo 3</div>
+        </div>
+        <div class="flow-step" id="flow-step-4" data-flow-step="4">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 12H16L12 16L8 12H11V8H13V12ZM15 4H5V20H19V8H15V4ZM3 2.9918C3 2.44405 3.44749 2 3.9985 2H16L20.9997 7L21 20.9925C21 21.5489 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918Z" fill="#2E61FF"/></svg>
+          </div>
+          <div class="h">Corrija antes de enviar</div>
+          <div class="d">O relatório aponta cada inconsistência com a referência normativa e a orientação de correção. Envie com segurança.</div>
+          <div class="num muted">Passo 4</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ Divider ═══════════════ -->
+  <div class="landing-divider">
+    <div class="line"></div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+    <div class="line"></div>
+  </div>
+
+  <!-- ═══════════════ As Verificações ═══════════════ -->
+  <section class="section verificacoes-section" data-screen-label="04 verificações">
+    <div class="section-title center">
+      <span class="pill neutral">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.33273 4.00001V6.00001H3.33273V4.00001H5.33273ZM1.9994 2.66667V7.33334H6.66608V2.66667H1.9994ZM8.66608 2.66667H13.9994V4.00001H8.66608V2.66667ZM8.66608 7.33334H13.9994V8.66667H8.66608V7.33334ZM8.66608 12H13.9994V13.3333H8.66608V12ZM7.13748 10.8047L6.19466 9.86194L3.9994 12.0572L2.80413 10.8619L1.86133 11.8047L3.9994 13.9428L7.13748 10.8047Z" fill="#2E61FF"/></svg>
+        AS VERIFICAÇÕES
+      </span>
+      <div class="h" style="font: 500 48px/56px var(--font-display); letter-spacing: -0.02em; color: var(--neutral-900); max-width: 860px;">Tudo que o <span style="color:#2E61FF;">SICONFI</span> avalia antes de você enviar.</div>
+      <p style="font: 400 16px/24px var(--font-sans); color: var(--neutral-700); margin: 0;">
+        197 regras organizadas em 4 grupos. As <strong style="color: var(--brand-blue); font-weight: 700;">57 marcadas como CAPAG</strong> são as mais críticas.
+      </p>
+    </div>
+
+    <div class="verif-layout">
+      <!-- Left: D1–D4 list -->
+      <div class="verif-list">
+
+        <div class="verif-item active" data-dim="d1">
+          <div class="d-badge-wrap">
+            <svg class="d-progress-ring" viewBox="0 0 52 52"><circle class="ring-track" cx="26" cy="26" r="22"/><circle class="ring-fill" cx="26" cy="26" r="22"/></svg>
+            <div class="d-badge active">D1</div>
+          </div>
+          <div class="verif-item-body">
+            <div class="verif-item-title">Entrega e Qualidade</div>
+            <div class="verif-item-desc">Verifica se todos os documentos obrigatórios foram enviados no prazo e se as MSC não têm inconsistências básicas.</div>
+            <div class="verif-tags">
+              <span class="vtag blue">38 Verificações</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="verif-divider"></div>
+
+        <div class="verif-item" data-dim="d2">
+          <div class="d-badge-wrap">
+            <svg class="d-progress-ring" viewBox="0 0 52 52"><circle class="ring-track" cx="26" cy="26" r="22"/><circle class="ring-fill" cx="26" cy="26" r="22"/></svg>
+            <div class="d-badge">D2</div>
+          </div>
+          <div class="verif-item-body">
+            <div class="verif-item-title">Consistência Interna</div>
+            <div class="verif-item-desc">Garante que os dados dentro de cada documento fazem sentido contábil — depreciação, ajustes para perdas, FUNDEB, RPPS.</div>
+            <div class="verif-tags">
+              <span class="vtag blue">80 Verificações</span>
+              <span class="vtag orange">↳ 14 impactam CAPAG</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="verif-divider"></div>
+
+        <div class="verif-item" data-dim="d3">
+          <div class="d-badge-wrap">
+            <svg class="d-progress-ring" viewBox="0 0 52 52"><circle class="ring-track" cx="26" cy="26" r="22"/><circle class="ring-fill" cx="26" cy="26" r="22"/></svg>
+            <div class="d-badge">D3</div>
+          </div>
+          <div class="verif-item-body">
+            <div class="verif-item-title">RREO × RGF</div>
+            <div class="verif-item-desc">Verifica se os mesmos valores aparecem de forma idêntica nos diferentes relatórios. RCL, restos a pagar, emendas individuais.</div>
+            <div class="verif-tags">
+              <span class="vtag blue">36 Verificações</span>
+              <span class="vtag orange">↳ 22 impactam CAPAG</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="verif-divider"></div>
+
+        <div class="verif-item" data-dim="d4">
+          <div class="d-badge-wrap">
+            <svg class="d-progress-ring" viewBox="0 0 52 52"><circle class="ring-track" cx="26" cy="26" r="22"/><circle class="ring-fill" cx="26" cy="26" r="22"/></svg>
+            <div class="d-badge">D4</div>
+          </div>
+          <div class="verif-item-body">
+            <div class="verif-item-title">Cruzamento Total</div>
+            <div class="verif-item-desc">O grupo mais exigente: cruza DCA, RREO, RGF e MSC simultaneamente. 21 com impacto CAPAG.</div>
+            <div class="verif-tags">
+              <span class="vtag blue">43 Verificações</span>
+              <span class="vtag orange">↳ 21 impactam CAPAG</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Preview card -->
+      <div class="verif-preview-wrap">
+        <div class="verif-preview-bg" aria-hidden="true">
+          <svg viewBox="0 0 580 380" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <circle cx="180" cy="190" r="220" fill="rgba(46,97,255,0.08)"/>
+            <circle cx="180" cy="190" r="160" fill="rgba(46,97,255,0.07)"/>
+          </svg>
+        </div>
+        <div class="verif-card" data-card="d1" data-progress="97.4">
+          <div class="verif-card-header">PREVIEW · RESULTADO D1</div>
+          <div class="verif-linear-progress">
+            <div class="vlp-buffer"></div>
+            <div class="vlp-fill"></div>
+          </div>
+
+          <div class="verif-rows">
+            <div class="verif-row">
+              <span class="verif-code">D1.01</span>
+              <span class="verif-name">Todos os documentos enviados</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D1.07</span>
+              <span class="verif-name">MSC sem registros nulos</span>
+              <span class="vstatus fail">reprovou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D1.12</span>
+              <span class="verif-name">Datas dentro do período válido</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+          </div>
+
+          <div class="verif-card-footer">
+            <span class="vf-passed">37/38 passou</span>
+            <span class="vf-fix">1 a corrigir</span>
+          </div>
+
+          <div class="verif-exemplos">
+            <div class="ve-label">EXEMPLOS</div>
+            <ul class="ve-list">
+              <li>Todos os documentos enviados (D1.01)</li>
+              <li>MSC sem registros nulos (D1.07)</li>
+              <li>Datas dentro do período válido (D1.12)</li>
+            </ul>
+          </div>
+
+          <div class="verif-count">
+            <span class="vc-num">38</span>
+            <span class="vc-label">verificações</span>
+          </div>
+        </div>
+
+        <!-- Card D2 -->
+        <div class="verif-card" data-card="d2" data-progress="98.75" style="display:none;">
+          <div class="verif-card-header">PREVIEW · RESULTADO D2</div>
+          <div class="verif-linear-progress">
+            <div class="vlp-buffer"></div>
+            <div class="vlp-fill"></div>
+          </div>
+
+          <div class="verif-rows">
+            <div class="verif-row">
+              <span class="verif-code">D2.18</span>
+              <span class="verif-name">Depreciação acumulada não excede valor</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D2.41</span>
+              <span class="verif-name">FUNDEB respeita teto constitucional</span>
+              <span class="vstatus fail">reprovou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D2.62</span>
+              <span class="verif-name">RPPS plano vs. financeiro segregados</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+          </div>
+
+          <div class="verif-card-footer">
+            <span class="vf-passed">79/80 passou</span>
+            <span class="vf-fix">1 a corrigir</span>
+          </div>
+
+          <div class="verif-exemplos">
+            <div class="ve-label">EXEMPLOS</div>
+            <ul class="ve-list">
+              <li>Depreciação acumulada não excede valor (D2.18)</li>
+              <li>FUNDEB respeita teto constitucional (D2.41)</li>
+              <li>RPPS plano vs. financeiro segregados (D2.62)</li>
+            </ul>
+          </div>
+
+          <div class="verif-count">
+            <span class="vc-num">80</span>
+            <span class="vc-label">verificações</span>
+            <span class="vc-num" style="margin-left:16px; color:#F59E0B;">14</span>
+            <span class="vc-label">CAPAG</span>
+          </div>
+        </div>
+
+        <!-- Card D3 -->
+        <div class="verif-card" data-card="d3" data-progress="97.2" style="display:none;">
+          <div class="verif-card-header">PREVIEW · RESULTADO D3</div>
+          <div class="verif-linear-progress">
+            <div class="vlp-buffer"></div>
+            <div class="vlp-fill"></div>
+          </div>
+
+          <div class="verif-rows">
+            <div class="verif-row">
+              <span class="verif-code">D3.04</span>
+              <span class="verif-name">RCL idêntica em RREO e RGF</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D3.11</span>
+              <span class="verif-name">Restos a pagar batendo nos dois</span>
+              <span class="vstatus fail">reprovou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D3.27</span>
+              <span class="verif-name">Emendas individuais consolidadas</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+          </div>
+
+          <div class="verif-card-footer">
+            <span class="vf-passed">35/36 passou</span>
+            <span class="vf-fix">1 a corrigir</span>
+          </div>
+
+          <div class="verif-exemplos">
+            <div class="ve-label">EXEMPLOS</div>
+            <ul class="ve-list">
+              <li>RCL idêntica em RREO e RGF (D3.04)</li>
+              <li>Restos a pagar batendo nos dois (D3.11)</li>
+              <li>Emendas individuais consolidadas (D3.27)</li>
+            </ul>
+          </div>
+
+          <div class="verif-count">
+            <span class="vc-num">36</span>
+            <span class="vc-label">verificações</span>
+            <span class="vc-num" style="margin-left:16px; color:#F59E0B;">22</span>
+            <span class="vc-label">CAPAG</span>
+          </div>
+        </div>
+
+        <!-- Card D4 -->
+        <div class="verif-card" data-card="d4" data-progress="97.7" style="display:none;">
+          <div class="verif-card-header">PREVIEW · RESULTADO D4</div>
+          <div class="verif-linear-progress">
+            <div class="vlp-buffer"></div>
+            <div class="vlp-fill"></div>
+          </div>
+
+          <div class="verif-rows">
+            <div class="verif-row">
+              <span class="verif-code">D4.02</span>
+              <span class="verif-name">Receita DCA = Receita MSC consolidada</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D4.15</span>
+              <span class="verif-name">Despesa empenhada bate em todos</span>
+              <span class="vstatus fail">reprovou</span>
+            </div>
+            <div class="verif-row">
+              <span class="verif-code">D4.33</span>
+              <span class="verif-name">Saldo de caixa consistente</span>
+              <span class="vstatus ok">passou</span>
+            </div>
+          </div>
+
+          <div class="verif-card-footer">
+            <span class="vf-passed">42/43 passou</span>
+            <span class="vf-fix">1 a corrigir</span>
+          </div>
+
+          <div class="verif-exemplos">
+            <div class="ve-label">EXEMPLOS</div>
+            <ul class="ve-list">
+              <li>Receita DCA = Receita MSC consolidada (D4.02)</li>
+              <li>Despesa empenhada bate em todos (D4.15)</li>
+              <li>Saldo de caixa consistente (D4.33)</li>
+            </ul>
+          </div>
+
+          <div class="verif-count">
+            <span class="vc-num">43</span>
+            <span class="vc-label">verificações</span>
+            <span class="vc-num" style="margin-left:16px; color:#F59E0B;">21</span>
+            <span class="vc-label">CAPAG</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ Divider ═══════════════ -->
+  <div class="landing-divider">
+    <div class="line"></div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+    <div class="line"></div>
+  </div>
+
+  <!-- ═══════════════ Testimonial ═══════════════ -->
+  <section class="section testimonial-section" data-screen-label="04 prova social">
+    <div class="t-head">
+      <span class="pill">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.52205 1.88395L8 0.666626L13.4779 1.88395C13.783 1.95173 14 2.22227 14 2.53474V9.19256C14 10.53 13.3316 11.7789 12.2188 12.5208L8 15.3333L3.7812 12.5208C2.66841 11.7789 2 10.53 2 9.19256V2.53474C2 2.22227 2.21702 1.95173 2.52205 1.88395ZM3.33333 3.06952V9.19256C3.33333 10.0842 3.77893 10.9168 4.5208 11.4114L8 13.7308L11.4792 11.4114C12.2211 10.9168 12.6667 10.0842 12.6667 9.19256V3.06952L8 2.03249L3.33333 3.06952ZM8 7.33329C7.07953 7.33329 6.33333 6.5871 6.33333 5.66663C6.33333 4.74615 7.07953 3.99996 8 3.99996C8.92047 3.99996 9.66667 4.74615 9.66667 5.66663C9.66667 6.5871 8.92047 7.33329 8 7.33329ZM5.01831 10.6666C5.18413 9.16663 6.45581 7.99996 8 7.99996C9.5442 7.99996 10.8159 9.16663 10.9817 10.6666H5.01831Z" fill="#2E61FF"/></svg>
+        prova social
+      </span>
+      <div class="h" style="font-weight: 500;">O que diz quem já usa.</div>
+    </div>
+
+    <div class="t-content">
+      <div class="t-portrait">
+        <img src="assets/testimonial-portrait.png" alt="" />
+        <div class="overlay"></div>
+        <div class="change">
+          <button aria-label="anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg>
+          </button>
+          <button aria-label="próximo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-name">
+          <div class="who">
+            <div class="n">João Carlos</div>
+            <div class="r">Contador</div>
+          </div>
+          <img src="assets/marca-pmc.png" alt="Marca PMC" />
+        </div>
+        <div class="t-quote">
+          Esses ai me ajudaram viu nossa senhora que sistema bom demais da conta
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ Divider ═══════════════ -->
+  <div class="landing-divider">
+    <div class="line"></div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+    <div class="line"></div>
+  </div>
+
+  <!-- ═══════════════ Closing CTA ═══════════════ -->
+  <section class="cta-section" data-screen-label="05 cta">
+    <div class="cta-card">
+      <div class="cta-deco" aria-hidden="true">
+        <img src="assets/grafismo.svg" alt="" style="width:100%; height:100%; object-fit: cover;" />
+      </div>
+      <span class="pill on-brand">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.044 10.6581C2.77982 10.1642 2.66732 9.62745 2.66732 8.57252L2.66732 7.42732C2.66732 6.37239 2.77982 5.83565 3.044 5.34172C3.26835 4.92218 3.5896 4.60092 4.00909 4.37659C4.50306 4.11245 5.03978 3.99992 6.09472 3.99992H9.90658C10.9615 3.99992 11.4983 4.11245 11.9922 4.37659C12.4117 4.60092 12.733 4.92218 12.9573 5.34172C13.2214 5.83565 13.334 6.37239 13.334 7.42732V8.57252C13.334 9.62745 13.2214 10.1642 12.9573 10.6581C12.733 11.0776 12.4117 11.3989 11.9922 11.6232C11.4983 11.8874 10.9615 11.9999 9.90658 11.9999H6.09472C5.03978 11.9999 4.50306 11.8874 4.00909 11.6232C3.5896 11.3989 3.26835 11.0776 3.044 10.6581ZM1.33398 7.42732L1.33398 8.57252C1.33398 9.91511 1.51964 10.6351 1.86825 11.2869C2.21686 11.9388 2.72844 12.4504 3.38029 12.799C4.03214 13.1476 4.75212 13.3333 6.09472 13.3333H9.90658C11.2492 13.3333 11.9692 13.1476 12.621 12.799C13.2729 12.4504 13.7845 11.9388 14.1331 11.2869C14.4817 10.6351 14.6673 9.91511 14.6673 8.57252V7.42732C14.6673 6.08472 14.4817 5.36472 14.1331 4.71292C13.7845 4.06105 13.2729 3.54945 12.621 3.20085C11.9692 2.85225 11.2492 2.66658 9.90658 2.66658H6.09472C4.75212 2.66658 4.03214 2.85225 3.38029 3.20085C2.72844 3.54945 2.21686 4.06105 1.86825 4.71292C1.51964 5.36472 1.33398 6.08472 1.33398 7.42732ZM4.00065 7.33325V8.66658H7.33398V7.33325H4.00065ZM9.17265 10.828L12.0011 7.99959L9.17265 5.17119L8.22985 6.11399L10.1155 7.99959L8.22985 9.88523L9.17265 10.828Z" fill="#FEFEFF"/></svg>
+        próximo passo
+      </span>
+
+      <h2 class="cta-h">Sua prefeitura envia o próximo arquivo com segurança.</h2>
+      <p class="cta-sub">Entre em contato. Nossa equipe mostra como funciona na prática, com seus próprios arquivos.</p>
+
+      <div class="cta-actions">
+        <a href="#contato" class="btn btn-stroke">
+          Falar com nossa equipe
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"/></svg>
+        </a>
+        <a href="#orcamento" class="btn btn-lighter">
+          Solicitar orçamento
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ Divider ═══════════════ -->
+  <div class="landing-divider">
+    <div class="line"></div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+    <div class="line"></div>
+  </div>
+
+  <!-- ═══════════════ Footer ═══════════════ -->
+  <footer class="footer" data-screen-label="06 footer">
+    <div class="footer-grid">
+      <div>
+        <div class="wordmark">
+          <img src="assets/Logo.svg" alt="" />
+          <span>Validador SICONFI</span>
+        </div>
+        <a href="#" class="footer-contact btn btn-link">
+          Entre em contato com nossa equipe
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.004 9.414l-8.607 8.607-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z"/></svg>
+        </a>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.563V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 011.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772 4.915 4.915 0 01-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"/></svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </a>
+        </div>
+        <div class="footer-copy">2026 Valida SICONFI — Todos os direitos reservados</div>
+      </div>
+      <div class="footer-list">
+        <a href="#">Página inicial</a>
+        <a href="#">Como Funciona</a>
+        <a href="#">Valores</a>
+        <a href="#">Termos de uso</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  (function () {
+    // Alturas da linha entre cada dot (distância entre tops dos dots)
+    // d1=0, d2=262, d3=524, d4=786 → segmentos de 262px cada
+    const segHeights = [0, 262, 524, 762];
+    const seg = document.getElementById('flow-seg');
+    const dots = [
+      document.getElementById('flow-dot-1'),
+      document.getElementById('flow-dot-2'),
+      document.getElementById('flow-dot-3'),
+      document.getElementById('flow-dot-4'),
+    ];
+    const steps = [
+      document.getElementById('flow-step-1'),
+      document.getElementById('flow-step-2'),
+      document.getElementById('flow-step-3'),
+      document.getElementById('flow-step-4'),
+    ];
+
+    function activateStep(index) {
+      // Ativa dot
+      dots[index].classList.remove('empty');
+      dots[index].classList.add('active');
+      // Estende a linha até o dot seguinte (ou ao final)
+      const targetHeight = index < segHeights.length - 1
+        ? segHeights[index + 1]
+        : segHeights[segHeights.length - 1];
+      seg.style.height = targetHeight + 'px';
+    }
+
+    // Ativa o passo 1 imediatamente
+    activateStep(0);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = steps.indexOf(entry.target);
+          if (idx > 0) activateStep(idx);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    steps.forEach((step, i) => {
+      if (i > 0 && step) observer.observe(step);
+    });
+  })();
+</script>
+
+<script>
+  // Verificações section — D1–D4 tab switching with auto-cycle
+  (function () {
+    const items = Array.from(document.querySelectorAll('.verif-item[data-dim]'));
+    const allCards = Array.from(document.querySelectorAll('.verif-card[data-card]'));
+    let currentIdx = 0;
+    let timer = null;
+
+    // Use opacity/pointer-events instead of display:none so transitions work
+    allCards.forEach((c, i) => {
+      c.style.position = i === 0 ? 'relative' : 'absolute';
+      c.style.opacity = i === 0 ? '1' : '0';
+      c.style.pointerEvents = i === 0 ? '' : 'none';
+      c.style.top = '0';
+      c.style.left = '0';
+      c.style.width = '100%';
+      c.style.transition = 'opacity 0.4s ease';
+      c.style.display = '';
+    });
+
+    const cardWrap = allCards[0].parentElement;
+    cardWrap.style.position = 'relative';
+
+    function resetBar(card) {
+      const bufferEl = card.querySelector('.vlp-buffer');
+      const fillEl = card.querySelector('.vlp-fill');
+      if (!bufferEl || !fillEl) return;
+      bufferEl.style.transition = 'none';
+      fillEl.style.transition = 'none';
+      bufferEl.style.width = '0%';
+      fillEl.style.width = '0%';
+    }
+
+    function animateBar(card) {
+      const target = parseFloat(card.dataset.progress) || 97;
+      const bufferEl = card.querySelector('.vlp-buffer');
+      const fillEl = card.querySelector('.vlp-fill');
+      if (!bufferEl || !fillEl) return;
+
+      // Force layout so browser registers the 0% state
+      bufferEl.getBoundingClientRect();
+      fillEl.getBoundingClientRect();
+
+      bufferEl.style.transition = 'width 4.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      fillEl.style.transition = 'width 4.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      bufferEl.style.width = Math.min(target + 1.5, 100) + '%';
+      fillEl.style.width = target + '%';
+    }
+
+    function activateDim(idx) {
+      currentIdx = idx;
+
+      // Reset all badge rings
+      items.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.d-badge').classList.remove('active');
+        const circle = i.querySelector('.ring-fill');
+        circle.style.transition = 'none';
+        circle.style.strokeDashoffset = '138.23';
+      });
+
+      // Hide all cards and reset their bars
+      allCards.forEach(c => {
+        c.style.opacity = '0';
+        c.style.pointerEvents = 'none';
+        c.style.position = 'absolute';
+        resetBar(c);
+      });
+
+      // Activate item
+      const item = items[idx];
+      item.classList.add('active');
+      item.querySelector('.d-badge').classList.add('active');
+
+      // Show card
+      const dim = item.dataset.dim;
+      const card = allCards.find(c => c.dataset.card === dim);
+      if (card) {
+        card.style.position = 'relative';
+        card.style.opacity = '1';
+        card.style.pointerEvents = '';
+
+        // Start bar after a tiny delay so the card is visible first
+        setTimeout(() => animateBar(card), 50);
+      }
+
+      // Start ring
+      const circle = item.querySelector('.ring-fill');
+      setTimeout(() => {
+        circle.style.transition = 'stroke-dashoffset 5s linear';
+        circle.style.strokeDashoffset = '0';
+      }, 50);
+
+      // Schedule next
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        activateDim((currentIdx + 1) % items.length);
+      }, 5000);
+    }
+
+    items.forEach((item, idx) => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => activateDim(idx));
+    });
+
+    // Reset all bars upfront
+    allCards.forEach(c => resetBar(c));
+
+    activateDim(0);
+  })();
+
+  // Browser band tab switching with progress bar
+  (function () {
+    const tabBtns = Array.from(document.querySelectorAll('.browser-tab-btn'));
+    const panels = document.querySelectorAll('.browser-panel');
+    const progressFill = document.querySelector('.hero-tab-progress-fill');
+    let heroTimer = null;
+    let currentTab = 0;
+
+    function startProgress() {
+      if (!progressFill) return;
+      progressFill.style.transition = 'none';
+      progressFill.style.width = '0%';
+      // Force reflow
+      progressFill.getBoundingClientRect();
+      progressFill.style.transition = 'width 5s linear';
+      progressFill.style.width = '100%';
+    }
+
+    function switchTo(idx) {
+      currentTab = idx;
+      const btn = tabBtns[idx];
+
+      tabBtns.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const panel = document.querySelector(`.browser-panel[data-panel="${btn.dataset.tab}"]`);
+      if (panel) panel.classList.add('active');
+
+      startProgress();
+
+      clearTimeout(heroTimer);
+      heroTimer = setTimeout(() => {
+        switchTo((currentTab + 1) % tabBtns.length);
+      }, 5000);
+    }
+
+    tabBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', () => switchTo(idx));
+    });
+
+    switchTo(0);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Valida SICONFI — Color & Type Tokens
+   Reconstructed from the "Projeto Siconfi" Figma file.
+   Used by all ui_kits and preview cards. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Inter+Tight:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* DM Mono — brand mono family (uploaded) */
+@font-face {
+  font-family: "DM Mono";
+  src: url("fonts/DMMono-Light.ttf") format("truetype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "DM Mono";
+  src: url("fonts/DMMono-LightItalic.ttf") format("truetype");
+  font-weight: 300; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "DM Mono";
+  src: url("fonts/DMMono-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "DM Mono";
+  src: url("fonts/DMMono-Italic.ttf") format("truetype");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "DM Mono";
+  src: url("fonts/DMMono-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "DM Mono";
+  src: url("fonts/DMMono-MediumItalic.ttf") format("truetype");
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+
+:root {
+  /* ── Brand ─────────────────────────────────────────── */
+  --brand-blue:        rgb(46, 97, 255);     /* primary */
+  --brand-blue-strong: rgb(51, 92, 255);     /* deeper accent */
+  --brand-blue-deep:   rgb(3, 41, 82);       /* wordmark */
+  --brand-ink:         rgb(2, 25, 49);       /* badge text */
+  --brand-violet:      rgb(125, 82, 244);    /* secondary accent */
+  --brand-amber:       rgb(246, 181, 30);    /* tertiary accent */
+  --brand-orange:      rgb(255, 90, 31);     /* warning accent */
+
+  /* Blue tints */
+  --blue-50:  rgb(234, 239, 255);
+  --blue-100: rgb(224, 231, 255);
+  --blue-200: rgb(190, 206, 255);
+  --blue-300: rgb(202, 192, 255);
+  --blue-tint: rgba(46, 97, 255, 0.08);
+  --blue-tint-strong: rgba(46, 97, 255, 0.20);
+
+  /* ── Neutrals (text-first scale) ───────────────────── */
+  --white:    rgb(255, 255, 255);
+  --white-warm: rgb(254, 254, 255);
+  --neutral-25: rgb(247, 247, 247);
+  --neutral-50: rgb(243, 244, 246);
+  --neutral-100: rgb(235, 235, 235);
+  --neutral-200: rgb(229, 231, 235);
+  --neutral-300: rgb(209, 213, 220);
+  --neutral-400: rgb(163, 163, 163);
+  --neutral-500: rgb(153, 161, 175);
+  --neutral-600: rgb(142, 152, 168);
+  --neutral-700: rgb(106, 114, 130);
+  --neutral-800: rgb(92, 92, 92);
+  --neutral-850: rgb(54, 65, 83);
+  --neutral-900: rgb(23, 23, 23);
+  --neutral-950: rgb(16, 24, 40);
+  --black:      rgb(0, 0, 0);
+
+  /* ── Semantic foreground ───────────────────────────── */
+  --fg-1: rgb(23, 23, 23);     /* primary headline ink */
+  --fg-2: rgb(2, 33, 66);      /* card title ink */
+  --fg-3: rgb(92, 92, 92);     /* body */
+  --fg-4: rgb(106, 114, 130);  /* secondary */
+  --fg-5: rgb(163, 163, 163);  /* meta */
+  --fg-onbrand: rgb(254, 254, 255);
+  --fg-onbrand-soft: rgb(234, 239, 255);
+  --fg-link: rgb(46, 97, 255);
+
+  /* ── Status ───────────────────────────────────────── */
+  --success-fg:   rgb(0, 122, 85);
+  --success-fg-2: rgb(5, 150, 105);
+  --success-bg:   rgb(236, 253, 245);
+  --success-border: rgb(164, 244, 207);
+
+  --danger-fg:    rgb(193, 0, 7);
+  --danger-fg-2:  rgb(251, 44, 54);
+  --danger-bg:    rgb(254, 242, 242);
+  --danger-border: rgb(255, 201, 201);
+
+  --warning-fg:   rgb(246, 181, 30);
+  --warning-bg:   rgb(255, 236, 192);
+
+  /* ── Surfaces ─────────────────────────────────────── */
+  --surface:        rgb(255, 255, 255);
+  --surface-2:      rgb(247, 247, 247);
+  --surface-3:      rgb(249, 250, 251);
+  --surface-brand:  rgb(46, 97, 255);
+  --surface-blue-tint: rgb(234, 239, 255);
+
+  /* ── Border ───────────────────────────────────────── */
+  --border-1: rgb(235, 235, 235);
+  --border-2: rgb(229, 231, 235);
+  --border-3: rgb(243, 244, 246);
+  --border-blue: rgb(234, 239, 255);
+  --border-brand: rgb(46, 97, 255);
+
+  /* ── Shadows ──────────────────────────────────────── */
+  --shadow-xs: 0px 1px 2px 0px rgba(10, 13, 20, 0.03);
+  --shadow-sm: 0px 1px 1px -0.5px rgba(23,23,23,0.04), 0px 3px 3px -1.5px rgba(23,23,23,0.04);
+  --shadow-card:
+    0px 0px 0px 1px rgba(23,23,23,0.04),
+    0px 1px 1px -0.5px rgba(23,23,23,0.04),
+    0px 3px 3px -1.5px rgba(23,23,23,0.04),
+    0px 6px 6px -3px rgba(23,23,23,0.04),
+    0px 10px 10px -5px rgba(23,23,23,0.04),
+    0px 20px 20px -10px rgba(23,23,23,0.04);
+  --shadow-image-card:
+    inset 0px 0px 6px 0px rgba(255,255,255,0.24),
+    0px 1px 1px -0.5px rgba(23,23,23,0.04),
+    0px 3px 3px -1.5px rgba(23,23,23,0.04),
+    0px 6px 6px -3px rgba(23,23,23,0.04),
+    0px 10px 10px -5px rgba(23,23,23,0.06),
+    0px 40px 40px -20px rgba(23,23,23,0.06);
+  --shadow-brand-soft: 0px 20px 27.9px -5px rgba(46,97,255,0.10);
+
+  /* ── Radii ────────────────────────────────────────── */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 24px;
+  --r-xl: 28px;
+  --r-pill: 9999px;
+  --r-badge: 50px;
+
+  /* ── Type families ────────────────────────────────── */
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-wordmark: "Roboto", "Inter", system-ui, sans-serif;
+  --font-mono:    "DM Mono", "Consolas", ui-monospace, monospace;
+
+  /* ── Type roles ───────────────────────────────────── */
+  --t-display-xl: 700 56px/64px var(--font-display);   /* hero headline */
+  --t-display-lg: 500 48px/56px var(--font-display);   /* section big */
+  --t-display-md: 500 40px/48px var(--font-display);   /* section */
+  --t-display-sm: 500 32px/40px var(--font-display);   /* CTA card */
+  --t-stat:       700 32px/32px var(--font-sans);       /* stat number */
+  --t-body-lg:    500 16px/24px var(--font-sans);       /* lead */
+  --t-body:       400 14px/20px var(--font-sans);
+  --t-body-strong:700 14px/20px var(--font-sans);
+  --t-meta:       500 14px/20px var(--font-sans);
+  --t-caption:    400 12px/16px var(--font-sans);
+  --t-mono:       400 11px/16.5px var(--font-mono);
+  --t-wordmark:   700 16px/24px var(--font-wordmark);
+  --tracking-tight: -0.010em;
+  --tracking-body:  -0.011em;
+  --tracking-meta:  -0.006em;
+  --tracking-wordmark: 0.150px;
+}
+
+/* Semantic element defaults */
+html, body { background: var(--surface); color: var(--fg-1); font-family: var(--font-sans); }
+.h1 { font: var(--t-display-xl); letter-spacing: var(--tracking-tight); color: var(--fg-1); }
+.h2 { font: var(--t-display-md); letter-spacing: var(--tracking-tight); color: var(--fg-1); }
+.h3 { font: var(--t-display-sm); letter-spacing: -0.005em; color: var(--fg-1); }
+.lead { font: var(--t-body-lg); letter-spacing: var(--tracking-body); color: var(--fg-3); }
+.body { font: var(--t-body); letter-spacing: var(--tracking-meta); color: var(--fg-3); }
+.meta { font: var(--t-meta); letter-spacing: var(--tracking-meta); color: var(--fg-4); }
+.mono { font: var(--t-mono); color: var(--neutral-300); }
