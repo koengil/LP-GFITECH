@@ -9,6 +9,7 @@
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--surface); }
+  html { scroll-padding-top: 64px; }
   body {
     border-left: 1px solid #ebebeb;
     border-right: 1px solid #ebebeb;
@@ -26,8 +27,8 @@
     width: 1600px;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
     background: var(--surface);
+    padding-top: 64px;
   }
 
   /* ─── Header / top bar ─────────────────────────────── */
@@ -38,8 +39,10 @@
     border-right: 1px solid #ebebeb;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 215px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     background: #fff;
   }
@@ -1135,27 +1138,27 @@
 </head>
 <body>
 
+<!-- Top bar -->
+<header class="topbar">
+  <div class="wordmark">
+    <img src="assets/Logo.svg" alt="" />
+    <span>Validador SICONFI</span>
+  </div>
+  <nav class="nav">
+    <a href="#o-problema">O problema</a>
+    <a href="#fluxo">Fluxo</a>
+    <a href="#as-verificacoes">As verificações</a>
+  </nav>
+  <a href="https://wa.me/5531975420407?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Valida%20SICONFI." target="_blank" class="btn btn-stroke" style="width: 140px;">Fale conosco</a>
+  <button class="topbar-menu-btn" aria-label="Menu" style="display:none;" onclick="this.closest('header').querySelector('.nav').style.display = this.closest('header').querySelector('.nav').style.display === 'flex' ? 'none' : 'flex';">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</header>
+
 <main class="stage" data-screen-label="01 Hero [Landing]">
 
   <!-- ═══════════════ Header + Hero + Browser + Stats ═══════════════ -->
   <section data-screen-label="header" style="position: relative;">
-
-    <!-- Top bar -->
-    <header class="topbar">
-      <div class="wordmark">
-        <img src="assets/Logo.svg" alt="" />
-        <span>Validador SICONFI</span>
-      </div>
-      <nav class="nav">
-        <a href="#o-problema">O problema</a>
-        <a href="#fluxo">Fluxo</a>
-        <a href="#as-verificacoes">As verificações</a>
-      </nav>
-      <a href="https://wa.me/5531975420407?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Valida%20SICONFI." target="_blank" class="btn btn-stroke" style="width: 140px;">Fale conosco</a>
-      <button class="topbar-menu-btn" aria-label="Menu" style="display:none;" onclick="this.closest('header').querySelector('.nav').style.display = this.closest('header').querySelector('.nav').style.display === 'flex' ? 'none' : 'flex';">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </header>
 
     <!-- Hero -->
     <div class="hero">
