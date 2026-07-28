@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>GFI Tech</title>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Inter+Tight:wght@400;500;600;700&amp;family=Roboto:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 <style>
-  html, body { margin: 0; padding: 0; background: rgb(255,255,255); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  html { scroll-padding-top: 64px; }
+  html, body { margin: 0; padding: 0; background: rgb(255,255,255); -webkit-font-smoothing: antialiased; }
   * { box-sizing: border-box; }
   a { color: rgb(51,92,255); text-decoration: none; }
   a:hover { color: rgb(31,59,173); }
@@ -55,19 +56,13 @@
     [data-m="testimg"] { width: 100% !important; height: 260px !important; }
   }
 </style>
-</head>
-<body>
-<div style="width: 100%; background: rgb(255,255,255); font-family: Inter, sans-serif;">
+</helmet>
 
-  <div data-m="topbar" data-screen-label="Topbar" style="height: 64px; background: rgb(245,248,255); border-top: 1px solid rgb(234,239,255); border-bottom: 1px solid rgb(234,239,255); display: flex; flex-direction: row; padding: 0 max(24px, calc((100% - 1320px) / 2 + 24px)); justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 40;">
-    <a href="index.html" style="display: flex; flex-direction: row; gap: 10px; align-items: center; text-decoration: none;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="34" height="27.321" viewBox="0 0 34 27.321" fill="none" style="color: rgb(46,97,255); flex-shrink: 0;" aria-label="GFI Tech">
-        <path d="M 10.991 0 C 13.127 0 15.392 1.044 17.099 2.137 C 17.201 2.202 17.218 2.344 17.136 2.434 L 14.994 4.759 C 14.929 4.83 14.822 4.843 14.741 4.791 C 13.6 4.062 12.247 3.64 10.796 3.64 C 6.722 3.64 3.42 6.966 3.42 11.069 C 3.42 15.171 6.722 18.497 10.796 18.497 C 14.153 18.497 16.986 16.274 17.879 13.184 C 17.903 13.113 17.86 13.086 17.782 13.085 C 17.133 13.082 16.509 13.097 15.921 13.088 C 16.347 12.194 17.335 10.739 18.319 9.986 C 18.981 9.373 20.135 8.957 20.94 8.7 C 21.37 8.563 21.82 8.51 22.271 8.51 L 28.174 8.51 C 28.287 8.51 28.377 8.606 28.363 8.719 C 28.228 9.839 27.505 11.794 25.451 12.052 L 21.68 12.052 C 21.576 12.052 21.491 12.134 21.483 12.238 C 21.386 13.615 20.884 16.324 19.53 17.724 C 19.456 17.8 19.449 17.921 19.518 18.001 L 20.238 18.877 C 20.321 18.977 20.448 19.03 20.577 19.017 L 20.794 18.996 C 21.312 18.982 21.79 19.239 22.155 19.609 L 26.211 23.73 C 26.818 24.345 26.815 25.338 26.207 25.951 L 25.275 26.889 C 24.699 27.469 23.765 27.465 23.194 26.88 L 19.041 22.625 C 18.791 22.369 18.577 22.06 18.556 21.701 C 18.548 21.554 18.558 21.426 18.576 21.321 C 18.606 21.156 18.586 20.971 18.474 20.846 L 17.624 19.896 C 17.59 19.922 17.556 19.947 17.522 19.973 C 15.696 21.333 13.437 22.137 10.991 22.137 C 4.921 22.137 0 17.181 0 11.069 C 0 4.956 4.921 0 10.991 0 Z" fill="currentColor" fill-rule="nonzero"></path>
-        <path d="M 33.671 4.65 C 33.803 4.546 34 4.638 34 4.806 L 34 14.961 C 34 15.185 33.965 15.408 33.877 15.613 C 33.415 16.688 32.318 18.322 30.711 18.308 C 30.61 18.307 30.532 18.221 30.532 18.119 L 30.532 6.22 C 30.532 6.103 30.632 6.011 30.748 6.004 C 31.3 5.972 32.379 5.671 33.671 4.65 Z" fill="currentColor" fill-rule="nonzero"></path>
-        <path d="M 17.001 10.232 C 16.448 10.818 15.794 12.004 15.498 13.076 C 14.789 13.046 14.142 12.962 13.58 12.741 C 12.552 12.218 12.597 11.069 12.597 10.456 C 12.597 10.331 12.662 10.232 12.781 10.232 L 17.001 10.232 Z" fill="currentColor" fill-rule="nonzero"></path>
-        <path d="M 29.125 1.328 C 29.229 1.328 29.315 1.411 29.315 1.515 C 29.314 3.476 27.681 4.49 26.624 4.836 C 26.431 4.899 26.228 4.919 26.025 4.919 L 23.698 4.919 C 23.436 4.919 23.17 4.954 22.933 5.068 C 21.777 5.619 21.534 6.642 21.568 7.265 C 21.574 7.38 21.494 7.487 21.381 7.504 C 20.165 7.688 19.099 8.402 18.486 8.943 C 18.352 9.062 18.124 8.968 18.124 8.789 L 18.124 7.11 C 18.124 6.471 18.152 5.822 18.374 5.223 C 19.071 3.348 20.724 2.181 21.949 1.622 C 22.445 1.395 22.992 1.328 23.537 1.328 L 29.125 1.328 Z" fill="currentColor" fill-rule="nonzero"></path>
-        <path d="M 33.772 1.328 C 33.892 1.328 33.984 1.436 33.961 1.555 C 33.492 4.029 31.733 4.804 30.73 4.907 C 30.621 4.918 30.532 4.829 30.532 4.719 L 30.532 1.525 C 30.532 1.416 30.619 1.328 30.727 1.328 L 33.772 1.328 Z" fill="currentColor" fill-rule="nonzero"></path>
-      </svg>
+<div style="width: 100%; background: rgb(255,255,255); font-family: Inter, sans-serif; overflow-x: hidden;">
+
+  <div data-m="topbar" data-screen-label="Topbar" style="height: 64px; background: rgb(245,248,255); border-top: 1px solid rgb(234,239,255); border-bottom: 1px solid rgb(234,239,255); display: flex; flex-direction: row; padding: 0 max(24px, calc((100% - 1320px) / 2 + 24px)); justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 40;">
+    <a href="Site GFI Tech.dc.html" style="display: flex; flex-direction: row; gap: 10px; align-items: center; text-decoration: none;">
+      <img src="assets/logo-mark.svg" alt="GFI Tech" style="width: 34px; height: 27.321px; color: rgb(46,97,255)">
       <span style="font-family: Roboto, sans-serif; font-weight: 600; font-size: 16px; line-height: 24px; letter-spacing: 0.15px; color: rgb(3,41,82); white-space: nowrap;">GFI Tech</span>
     </a>
     <div data-m="nav" style="width: 399.438px; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
@@ -76,19 +71,19 @@
       <a href="Sobre.dc.html" style="font-weight: 500; font-size: 14px; line-height: 20px; color: rgb(74,85,101);">Sobre</a>
       <a href="Contato.dc.html" style="font-weight: 500; font-size: 14px; line-height: 20px; color: rgb(74,85,101);">Contato</a>
     </div>
-    <a data-m="topcta" href="https://wa.me/553175420407" target="_blank" style="width: 140px; height: 40px; border-radius: 50px; background: rgb(255,255,255); border: 1px solid rgb(229,231,235); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(23,23,23); transition: all 120ms ease;" onmouseover="this.style.background='rgb(247,247,247)'; this.style.borderColor='rgb(209,213,220)';" onmouseout="this.style.background='rgb(255,255,255)'; this.style.borderColor='rgb(229,231,235)';">Fale conosco</a>
-    <button data-m="burger" onclick="toggleMobileMenu()" style="display: none; width: 40px; height: 40px; border: 0; border-radius: 50px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(234,239,255); align-items: center; justify-content: center; cursor: pointer; color: rgb(2,25,49); font-size: 20px; padding: 0;"><i class="ri-menu-line"></i></button>
+    <a data-m="topcta" href="{{ wa }}" target="_blank" style="width: 140px; height: 40px; border-radius: 50px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(51,92,255), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(51,92,255); transition: background 150ms ease-out;" style-hover="background: rgb(245,248,255)">Fale conosco</a>
+    <button data-m="burger" onClick="{{ toggleMenu }}" style="display: none; width: 40px; height: 40px; border: 0; border-radius: 50px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(234,239,255); align-items: center; justify-content: center; cursor: pointer; color: rgb(2,25,49); font-size: 20px; padding: 0;"><i class="ri-menu-line"></i></button>
   </div>
 
-  <div id="mobileMenu" style="display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 39; background: rgb(255,255,255); border-bottom: 1px solid rgb(234,239,255); flex-direction: column; padding: 12px 20px 20px; max-height: calc(100vh - 64px); overflow-y: auto;">
-    <a href="#solucoes" onclick="closeMobileMenu()" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Soluções</a>
+  <div style="display: {{ menuDisplay }}; position: sticky; top: 64px; z-index: 39; background: rgb(255,255,255); border-bottom: 1px solid rgb(234,239,255); flex-direction: column; padding: 12px 20px 20px;">
+    <a href="#solucoes" onClick="{{ closeMenu }}" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Soluções</a>
     <a href="Blog.dc.html" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Blog</a>
     <a href="Sobre.dc.html" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Sobre</a>
     <a href="Contato.dc.html" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Contato</a>
-    <a href="https://wa.me/553175420407" target="_blank" style="margin-top: 16px; height: 44px; border-radius: 50px; background: rgb(51,92,255); color: rgb(255,255,255); display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px;">Fale conosco</a>
+    <a href="{{ wa }}" target="_blank" style="margin-top: 16px; height: 44px; border-radius: 50px; background: rgb(51,92,255); color: rgb(255,255,255); display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px;">Fale conosco</a>
   </div>
 
-  <div data-m="secpad" data-screen-label="Hero" style="height: 580px; overflow: hidden; background: rgb(245,248,255); display: flex; flex-direction: row; gap: 56px; padding: 0 max(24px, calc((100% - 1320px) / 2 + 24px)); justify-content: center; align-items: flex-start; position: relative; margin-top: 64px;">
+  <div data-m="secpad" data-screen-label="Hero" style="height: 580px; overflow: hidden; background: rgb(245,248,255); display: flex; flex-direction: row; gap: 56px; padding: 0 max(24px, calc((100% - 1320px) / 2 + 24px)); justify-content: center; align-items: flex-start; position: relative;">
     <img src="assets/hero-bg.png" alt="" style="position: absolute; left: -83px; top: -185px; width: 1916px; height: 957px; object-fit: cover; opacity: 0.1; pointer-events: none;">
     <div data-m="fluid" style="position: relative; height: 580px; max-width: 1272px; width: 100%; display: flex; flex-direction: column; gap: 64px; padding: 80px 0; align-items: center;">
       <div style="display: flex; flex-direction: column; gap: 32px; align-items: center; align-self: stretch;">
@@ -101,7 +96,7 @@
         </div>
         <p style="margin: 0; width: 754px; max-width: 100%; font-weight: 400; font-size: 16px; text-align: center; line-height: 24px; color: rgb(106,114,130); text-wrap: pretty;">A GFI Tech desenvolve soluções de validação e conciliação de dados para SICONFI e SICOM MG, usadas por prefeituras em todo o Brasil para garantir prestações de contas mais seguras.</p>
       </div>
-      <a href="https://wa.me/553175420407" target="_blank" style="width: 209px; height: 40px; border-radius: 50px; background: rgb(51,92,255); box-shadow: 0px 1px 0px 0px rgb(51,92,255), 0px 4px 4px 0px rgb(224,231,255); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; color: rgb(255,255,255); transition: background 150ms ease-out;" style-hover="background: rgb(37,72,214)">
+      <a href="{{ wa }}" target="_blank" style="width: 209px; height: 40px; border-radius: 50px; background: rgb(51,92,255); box-shadow: 0px 1px 0px 0px rgb(51,92,255), 0px 4px 4px 0px rgb(224,231,255); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; color: rgb(255,255,255); transition: background 150ms ease-out;" style-hover="background: rgb(37,72,214)">
         <span style="padding: 0 4px; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(255,255,255); white-space: nowrap;">Falar com nossa equipe</span>
         <i class="ri-arrow-right-up-line" style="font-size: 20px; line-height: 20px; color: rgb(255,255,255);"></i>
       </a>
@@ -140,7 +135,7 @@
           </div>
           <h2 data-m="h3" style="margin: 0; align-self: stretch; font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 40px; line-height: 48px; letter-spacing: -0.01em; color: rgb(23,23,23); text-wrap: pretty;">Processos manuais custam tempo e escondem erros que custam caro.</h2>
         </div>
-        <a href="https://wa.me/553175420407" target="_blank" style="width: 171px; height: 40px; border-radius: 50px; background: rgb(51,92,255); box-shadow: 0px 1px 0px 0px rgb(51,92,255), 0px 4px 4px 0px rgb(224,231,255); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; transition: background 150ms ease-out;" style-hover="background: rgb(37,72,214)">
+        <a href="{{ wa }}" target="_blank" style="width: 171px; height: 40px; border-radius: 50px; background: rgb(51,92,255); box-shadow: 0px 1px 0px 0px rgb(51,92,255), 0px 4px 4px 0px rgb(224,231,255); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; transition: background 150ms ease-out;" style-hover="background: rgb(37,72,214)">
           <span style="padding: 0 4px; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(255,255,255); white-space: nowrap;">Entrar em contato</span>
           <i class="ri-arrow-right-up-line" style="font-size: 20px; line-height: 20px; color: rgb(255,255,255);"></i>
         </a>
@@ -207,7 +202,7 @@
             <span style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.006em; color: rgb(23,23,23);">Despesa por Função (SICONFI para auxílio SIOPE/SIOPS)</span>
             <span style="font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Envie sua MSC do SICONFI e saiba exatamente quanto está sendo informado com despesas empenhadas, liquidadas e pagas por função.</span>
           </div>
-          <a href="https://wa.me/553175420407" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(51,92,255);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
+          <a href="{{ wa }}" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(23,23,23);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
         </div>
 
         <div data-m="itemwide" style="position: relative; width: 814px; height: 404px; overflow: hidden; border-radius: 40px; background: rgb(247,247,247); display: flex; flex-direction: column; padding: 48px; justify-content: space-between; align-items: flex-start;">
@@ -217,7 +212,7 @@
           <div data-m="fluid" style="width: 308px; display: flex; flex-direction: column; gap: 8px; justify-content: center; align-items: flex-start;">
             <span style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.006em; color: rgb(23,23,23);">Valida SICONFI</span>
             <span style="font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Rode as verificações D1, D2, D3 e D4 nos seus arquivos antes do envio e evite perder pontos no CAPAG por erros que podem ser prevenidos</span>
-            <a href="valida-siconfi/index.html" target="_blank" rel="noopener" style="margin-top: 16px; display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(51,92,255);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
+            <a href="{{ wa }}" target="_blank" style="margin-top: 16px; display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(23,23,23);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
           </div>
           <div data-m="hidem" style="position: absolute; left: 376px; top: 48.348px; width: 896px; height: 451.5px; border-radius: 24px; background: rgb(255,255,255); box-shadow: inset 0 0 0 4px rgb(229,231,235), 0px 20px 27.9px -5px rgba(46,97,255,0.1); display: flex; flex-direction: column; gap: 20px; padding: 21px 21px 1px;">
             <div style="position: relative; height: 43.5px; border-bottom: 1px solid rgb(243,244,246); flex-shrink: 0;">
@@ -302,7 +297,7 @@
             <span style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.006em; color: rgb(23,23,23);">Conciliador EXT/CTB</span>
             <span style="font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Conciliação de saldos iniciais e finais entre os demonstrativos EXT e CTB do SICOM MG.</span>
           </div>
-          <a href="https://wa.me/553175420407" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(51,92,255);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
+          <a href="{{ wa }}" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(23,23,23);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
         </div>
 
         <div data-m="item404" style="width: 404px; height: 404px; overflow: hidden; border-radius: 40px; background: rgb(247,247,247); display: flex; flex-direction: column; padding: 48px; justify-content: space-between; align-items: flex-start;">
@@ -313,7 +308,7 @@
             <span style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.006em; color: rgb(23,23,23);">Conciliador de Balancete</span>
             <span style="font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Conciliação de saldos iniciais e finais no Balancete do SICOM MG.</span>
           </div>
-          <a href="https://wa.me/553175420407" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(51,92,255);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
+          <a href="{{ wa }}" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(23,23,23);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
         </div>
 
         <div data-m="item404" style="width: 404px; height: 404px; overflow: hidden; border-radius: 40px; background: rgb(247,247,247); display: flex; flex-direction: column; padding: 48px; justify-content: space-between; align-items: flex-start;">
@@ -324,7 +319,7 @@
             <span style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.006em; color: rgb(23,23,23);">Consolidador de Balancete</span>
             <span style="font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Identificação e consolidação de duplicatas no Balancete do SICOM MG.</span>
           </div>
-          <a href="https://wa.me/553175420407" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(51,92,255);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
+          <a href="{{ wa }}" target="_blank" style="display: flex; flex-direction: row; gap: 4px; align-items: center; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(23,23,23);">Acessar ferramenta<i class="ri-arrow-right-up-long-line" style="font-size: 20px; line-height: 20px; color: rgb(51,92,255);"></i></a>
         </div>
       </div>
     </div>
@@ -478,7 +473,7 @@
           <span data-m="h3" style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 32px; line-height: 40px; letter-spacing: -0.005em; color: rgb(255,255,255); text-wrap: pretty;">Sua prefeitura envia o próximo arquivo com segurança.</span>
           <span data-m="fluid" style="width: 100%; opacity: 0.64; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(255,255,255);">Entre em contato. Nossa equipe mostra como cada ferramenta funciona na prática, com seus próprios arquivos.</span>
         </div>
-        <a href="https://wa.me/553175420407" target="_blank" style="width: 209px; height: 40px; border-radius: 50px; background: rgb(1,14,29); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; transition: background 150ms ease-out;" style-hover="background: rgb(0,8,18)">
+        <a href="{{ wa }}" target="_blank" style="width: 209px; height: 40px; border-radius: 50px; background: rgb(1,14,29); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center; transition: background 150ms ease-out;" style-hover="background: rgb(0,8,18)">
           <span style="padding: 0 4px; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(255,255,255); white-space: nowrap;">Falar com nossa equipe</span>
           <i class="ri-arrow-right-up-line" style="font-size: 20px; line-height: 20px; color: rgb(255,255,255);"></i>
         </a>
@@ -516,16 +511,10 @@
     <div data-m="row" data-screen-label="Footer content" style="width: 100%; max-width: 1272px; display: flex; flex-direction: row; gap: 24px; align-items: flex-start;">
       <div data-m="fluid" style="display: flex; flex-direction: column; gap: 32px; align-items: flex-start; flex-grow: 1;">
         <div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="27.321" viewBox="0 0 34 27.321" fill="none" style="color: rgb(46,97,255); flex-shrink: 0;" aria-hidden="true">
-            <path d="M 10.991 0 C 13.127 0 15.392 1.044 17.099 2.137 C 17.201 2.202 17.218 2.344 17.136 2.434 L 14.994 4.759 C 14.929 4.83 14.822 4.843 14.741 4.791 C 13.6 4.062 12.247 3.64 10.796 3.64 C 6.722 3.64 3.42 6.966 3.42 11.069 C 3.42 15.171 6.722 18.497 10.796 18.497 C 14.153 18.497 16.986 16.274 17.879 13.184 C 17.903 13.113 17.86 13.086 17.782 13.085 C 17.133 13.082 16.509 13.097 15.921 13.088 C 16.347 12.194 17.335 10.739 18.319 9.986 C 18.981 9.373 20.135 8.957 20.94 8.7 C 21.37 8.563 21.82 8.51 22.271 8.51 L 28.174 8.51 C 28.287 8.51 28.377 8.606 28.363 8.719 C 28.228 9.839 27.505 11.794 25.451 12.052 L 21.68 12.052 C 21.576 12.052 21.491 12.134 21.483 12.238 C 21.386 13.615 20.884 16.324 19.53 17.724 C 19.456 17.8 19.449 17.921 19.518 18.001 L 20.238 18.877 C 20.321 18.977 20.448 19.03 20.577 19.017 L 20.794 18.996 C 21.312 18.982 21.79 19.239 22.155 19.609 L 26.211 23.73 C 26.818 24.345 26.815 25.338 26.207 25.951 L 25.275 26.889 C 24.699 27.469 23.765 27.465 23.194 26.88 L 19.041 22.625 C 18.791 22.369 18.577 22.06 18.556 21.701 C 18.548 21.554 18.558 21.426 18.576 21.321 C 18.606 21.156 18.586 20.971 18.474 20.846 L 17.624 19.896 C 17.59 19.922 17.556 19.947 17.522 19.973 C 15.696 21.333 13.437 22.137 10.991 22.137 C 4.921 22.137 0 17.181 0 11.069 C 0 4.956 4.921 0 10.991 0 Z" fill="currentColor" fill-rule="nonzero"></path>
-            <path d="M 33.671 4.65 C 33.803 4.546 34 4.638 34 4.806 L 34 14.961 C 34 15.185 33.965 15.408 33.877 15.613 C 33.415 16.688 32.318 18.322 30.711 18.308 C 30.61 18.307 30.532 18.221 30.532 18.119 L 30.532 6.22 C 30.532 6.103 30.632 6.011 30.748 6.004 C 31.3 5.972 32.379 5.671 33.671 4.65 Z" fill="currentColor" fill-rule="nonzero"></path>
-            <path d="M 17.001 10.232 C 16.448 10.818 15.794 12.004 15.498 13.076 C 14.789 13.046 14.142 12.962 13.58 12.741 C 12.552 12.218 12.597 11.069 12.597 10.456 C 12.597 10.331 12.662 10.232 12.781 10.232 L 17.001 10.232 Z" fill="currentColor" fill-rule="nonzero"></path>
-            <path d="M 29.125 1.328 C 29.229 1.328 29.315 1.411 29.315 1.515 C 29.314 3.476 27.681 4.49 26.624 4.836 C 26.431 4.899 26.228 4.919 26.025 4.919 L 23.698 4.919 C 23.436 4.919 23.17 4.954 22.933 5.068 C 21.777 5.619 21.534 6.642 21.568 7.265 C 21.574 7.38 21.494 7.487 21.381 7.504 C 20.165 7.688 19.099 8.402 18.486 8.943 C 18.352 9.062 18.124 8.968 18.124 8.789 L 18.124 7.11 C 18.124 6.471 18.152 5.822 18.374 5.223 C 19.071 3.348 20.724 2.181 21.949 1.622 C 22.445 1.395 22.992 1.328 23.537 1.328 L 29.125 1.328 Z" fill="currentColor" fill-rule="nonzero"></path>
-            <path d="M 33.772 1.328 C 33.892 1.328 33.984 1.436 33.961 1.555 C 33.492 4.029 31.733 4.804 30.73 4.907 C 30.621 4.918 30.532 4.829 30.532 4.719 L 30.532 1.525 C 30.532 1.416 30.619 1.328 30.727 1.328 L 33.772 1.328 Z" fill="currentColor" fill-rule="nonzero"></path>
-          </svg>
+          <img src="assets/logo-mark-footer.svg" alt="" style="width: 34px; height: 27.321px; color: rgb(46,97,255);">
           
         </div>
-        <a href="https://wa.me/553175420407" target="_blank" style="width: 288px; height: 32px; border-radius: 10px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(235,235,235), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; flex-direction: row; gap: 4px; padding: 6px 10px; justify-content: center; align-items: center; transition: background 150ms ease-out;" style-hover="background: rgb(247,247,247)">
+        <a href="{{ wa }}" target="_blank" style="width: 288px; height: 32px; border-radius: 10px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(235,235,235), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; flex-direction: row; gap: 4px; padding: 6px 10px; justify-content: center; align-items: center; transition: background 150ms ease-out;" style-hover="background: rgb(247,247,247)">
           <span style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(92,92,92);">Entre em contato com nossa equipe</span>
           <i class="ri-arrow-right-up-long-line" style="font-size: 18px; line-height: 18px; color: rgb(153,160,174);"></i>
         </a>
@@ -546,14 +535,19 @@
   </div>
 </div>
 
-<script>
-  function toggleMobileMenu() {
-    var m = document.getElementById("mobileMenu");
-    m.style.display = (m.style.display === "flex") ? "none" : "flex";
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://wa.me/5531000000000&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      wa: this.props.whatsapp ?? "https://wa.me/5531000000000",
+      menuDisplay: this.state.menuOpen ? "flex" : "none",
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+    };
   }
-  function closeMobileMenu() {
-    document.getElementById("mobileMenu").style.display = "none";
-  }
+}
 </script>
 </body>
 </html>

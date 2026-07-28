@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: rgb(255,255,255); -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: rgb(51,92,255); text-decoration: none; }
+  a:hover { color: rgb(31,59,173); }
+  @media (max-width: 1620px) {
+    [data-m="topbar"] { padding-left: min(215px, 6vw) !important; padding-right: min(215px, 6vw) !important; }
+    [data-m="secpad"] { padding-left: min(188px, 5vw) !important; padding-right: min(188px, 5vw) !important; }
+    [data-m="fluid"] { max-width: 100% !important; }
+    [data-m="row"] > [data-m="fluid"] { flex: 1 1 0 !important; width: auto !important; min-width: 0 !important; }
+  }
+  @media (max-width: 980px) {
+    [data-m="topbar"] { padding: 0 20px !important; }
+    [data-m="nav"], [data-m="topcta"] { display: none !important; }
+    [data-m="burger"] { display: flex !important; }
+    [data-m="secpad"] { padding: 56px 20px !important; height: auto !important; }
+    [data-m="row"] { flex-direction: column !important; width: auto !important; height: auto !important; gap: 24px !important; }
+    [data-m="row"] > [data-m="fluid"] { flex: 0 0 auto !important; height: auto !important; min-height: 0 !important; overflow: visible !important; }
+    [data-m="fluid"] { width: 100% !important; max-width: 100% !important; height: auto !important; }
+    [data-m="h2"] { font-size: 30px !important; line-height: 38px !important; white-space: normal !important; }
+    [data-m="hidem"] { display: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="width: 100%; background: rgb(255,255,255); font-family: Inter, sans-serif; overflow-x: hidden;">
+
+  <div data-m="topbar" data-screen-label="Topbar" style="height: 64px; background: rgb(245,248,255); border-top: 1px solid rgb(234,239,255); border-bottom: 1px solid rgb(234,239,255); display: flex; flex-direction: row; padding: 0 215px; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 40;">
+    <a href="Site GFI Tech.dc.html" style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+      <img src="assets/logo-mark.svg" alt="GFI Tech" style="width: 34px; height: 27.321px; color: rgb(46,97,255);" />
+      <span style="font-family: Roboto, sans-serif; font-weight: 600; font-size: 16px; line-height: 24px; letter-spacing: 0.15px; color: rgb(3,41,82); white-space: nowrap;">GFI Tech</span>
+    </a>
+    <div data-m="nav" style="width: 399.438px; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+      <a href="Site GFI Tech.dc.html#solucoes" style="font-weight: 500; font-size: 14px; line-height: 20px; color: rgb(74,85,101);">Soluções</a>
+      <a href="Blog.dc.html" style="font-weight: 500; font-size: 14px; line-height: 20px; color: rgb(74,85,101);">Blog</a>
+      <a href="Sobre.dc.html" style="font-weight: 500; font-size: 14px; line-height: 20px; color: rgb(74,85,101);">Sobre</a>
+      <a href="Contato.dc.html" style="font-weight: 500; font-size: 14px; line-height: 20px; color: rgb(23,23,23);">Contato</a>
+    </div>
+    <a data-m="topcta" href="{{ wa }}" target="_blank" style="width: 140px; height: 40px; border-radius: 50px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(51,92,255), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; gap: 4px; padding: 10px; justify-content: center; align-items: center; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(51,92,255);" style-hover="background: rgb(245,248,255)">Fale conosco</a>
+    <button data-m="burger" onClick="{{ toggleMenu }}" style="display: none; width: 40px; height: 40px; border: 0; border-radius: 50px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(234,239,255); align-items: center; justify-content: center; cursor: pointer; color: rgb(2,25,49); font-size: 20px; padding: 0;"><i class="ri-menu-line"></i></button>
+  </div>
+
+  <div style="display: {{ menuDisplay }}; position: sticky; top: 64px; z-index: 39; background: rgb(255,255,255); border-bottom: 1px solid rgb(234,239,255); flex-direction: column; padding: 12px 20px 20px;">
+    <a href="Site GFI Tech.dc.html#solucoes" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Soluções</a>
+    <a href="Blog.dc.html" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Blog</a>
+    <a href="Sobre.dc.html" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Sobre</a>
+    <a href="Contato.dc.html" style="padding: 12px 0; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(23,23,23); border-bottom: 1px solid rgb(243,244,246);">Contato</a>
+  </div>
+
+  <div data-m="secpad" data-screen-label="Cabeçalho Contato" style="background: rgb(245,248,255); display: flex; flex-direction: column; align-items: center; padding: 88px 188px;">
+    <div style="width: 828px; max-width: 100%; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+      <div style="height: 32px; border-radius: 50px; background: rgb(254,254,255); box-shadow: inset 0 0 0 1px rgb(234,239,255), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; flex-direction: row; gap: 8px; padding: 6px 12px; align-items: center;">
+        <i class="ri-customer-service-2-line" style="font-size: 16px; line-height: 16px; color: rgb(51,92,255);"></i>
+        <span style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(2,25,49); text-transform: uppercase; white-space: nowrap;">Contato</span>
+      </div>
+      <h1 data-m="h2" style="margin: 0; font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 48px; text-align: center; line-height: 56px; letter-spacing: -0.01em; color: rgb(2,25,49); text-wrap: pretty;">Fale com nossa equipe.</h1>
+      <p style="margin: 0; width: 754px; max-width: 100%; font-weight: 400; font-size: 16px; text-align: center; line-height: 24px; color: rgb(106,114,130); text-wrap: pretty;">Mostramos como cada ferramenta funciona na prática, com os arquivos da sua prefeitura. O diagnóstico inicial é gratuito e leva menos de um minuto.</p>
+    </div>
+  </div>
+
+  <div data-m="secpad" data-screen-label="Canais" style="background: rgb(255,255,255); display: flex; flex-direction: column; align-items: center; padding: 96px 188px;">
+    <div data-m="row" style="width: 100%; max-width: 1224px; display: flex; flex-direction: row; gap: 6px; align-items: stretch;">
+      <div data-m="fluid" style="width: 607px; border-radius: 40px; background: rgb(247,247,247); display: flex; flex-direction: column; padding: 48px; gap: 24px; align-items: flex-start;">
+        <div style="width: 64px; height: 64px; border-radius: 20px; background: rgb(255,255,255); box-shadow: 0px 3px 3px -1.5px rgba(23,23,23,0.06), 0px 1px 1px -0.5px rgba(23,23,23,0.06), 0px 0px 0px 1px rgba(23,23,23,0.02); display: flex; align-items: center; justify-content: center;">
+          <i class="ri-whatsapp-line" style="font-size: 32px; line-height: 32px; color: rgb(51,92,255);"></i>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.006em; color: rgb(23,23,23);">WhatsApp</span>
+          <span style="font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">O caminho mais rápido: envie sua dúvida ou seu arquivo e nossa equipe responde no horário comercial.</span>
+        </div>
+        <a href="{{ wa }}" target="_blank" style="width: 209px; height: 40px; border-radius: 50px; background: rgb(51,92,255); box-shadow: 0px 1px 0px 0px rgb(51,92,255), 0px 4px 4px 0px rgb(224,231,255); display: flex; flex-direction: row; gap: 4px; padding: 10px; justify-content: center; align-items: center;" style-hover="background: rgb(37,72,214)">
+          <span style="padding: 0 4px; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(255,255,255); white-space: nowrap;">Falar com nossa equipe</span>
+          <i class="ri-arrow-right-up-line" style="font-size: 20px; line-height: 20px; color: rgb(255,255,255);"></i>
+        </a>
+      </div>
+      <div data-m="fluid" style="width: 607px; border-radius: 40px; background: rgb(247,247,247); display: flex; flex-direction: column; padding: 48px; gap: 24px; align-items: flex-start;">
+        <div style="width: 64px; height: 64px; border-radius: 20px; background: rgb(255,255,255); box-shadow: 0px 3px 3px -1.5px rgba(23,23,23,0.06), 0px 1px 1px -0.5px rgba(23,23,23,0.06), 0px 0px 0px 1px rgba(23,23,23,0.02); display: flex; align-items: center; justify-content: center;">
+          <i class="ri-shield-check-line" style="font-size: 32px; line-height: 32px; color: rgb(51,92,255);"></i>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.006em; color: rgb(23,23,23);">Como o atendimento funciona</span>
+          <span style="font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Do diagnóstico à implementação, em quatro passos.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; align-self: stretch;">
+          <div style="display: flex; flex-direction: row; gap: 12px; align-items: baseline;">
+            <span style="width: 24px; flex-shrink: 0; font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(51,92,255);">01</span>
+            <span style="font-weight: 400; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Diagnóstico gratuito da sua operação atual.</span>
+          </div>
+          <div style="display: flex; flex-direction: row; gap: 12px; align-items: baseline;">
+            <span style="width: 24px; flex-shrink: 0; font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(51,92,255);">02</span>
+            <span style="font-weight: 400; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Recomendação da ferramenta certa para o seu problema.</span>
+          </div>
+          <div style="display: flex; flex-direction: row; gap: 12px; align-items: baseline;">
+            <span style="width: 24px; flex-shrink: 0; font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(51,92,255);">03</span>
+            <span style="font-weight: 400; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Implementação assistida pela nossa equipe.</span>
+          </div>
+          <div style="display: flex; flex-direction: row; gap: 12px; align-items: baseline;">
+            <span style="width: 24px; flex-shrink: 0; font-family: 'Inter Tight', Inter, sans-serif; font-weight: 500; font-size: 16px; line-height: 24px; color: rgb(51,92,255);">04</span>
+            <span style="font-weight: 400; font-size: 16px; line-height: 24px; letter-spacing: -0.011em; color: rgb(92,92,92);">Acompanhamento contínuo e suporte.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-m="secpad" data-screen-label="Footer" style="background: rgb(255,255,255); border-top: 1px solid rgb(235,235,235); display: flex; flex-direction: column; align-items: center; padding: 80px 188px 92px;">
+    <div data-m="row" style="width: 100%; max-width: 1224px; display: flex; flex-direction: row; gap: 80px; align-items: flex-start;">
+      <div data-m="fluid" style="display: flex; flex-direction: column; gap: 32px; align-items: flex-start; flex-grow: 1;">
+        <div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+          <img src="assets/logo-mark-footer.svg" alt="" style="width: 34px; height: 27.321px; color: rgb(46,97,255);" />
+          <span style="font-family: Roboto, sans-serif; font-weight: 600; font-size: 16px; line-height: 24px; letter-spacing: 0.15px; color: rgb(3,41,82); white-space: nowrap;">Validador SICONFI</span>
+        </div>
+        <a href="{{ wa }}" target="_blank" style="width: 288px; height: 32px; border-radius: 10px; background: rgb(255,255,255); box-shadow: inset 0 0 0 1px rgb(235,235,235), 0px 1px 2px 0px rgba(10,13,20,0.03); display: flex; flex-direction: row; gap: 4px; padding: 6px 10px; justify-content: center; align-items: center;" style-hover="background: rgb(247,247,247)">
+          <span style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(92,92,92);">Entre em contato com nossa equipe</span>
+          <i class="ri-arrow-right-up-long-line" style="font-size: 18px; line-height: 18px; color: rgb(153,160,174);"></i>
+        </a>
+        <div style="display: flex; flex-direction: row; gap: 16px;">
+          <a href="#" style="width: 32px; height: 32px; border-radius: 96px; box-shadow: inset 0 0 0 1px rgb(235,235,235); display: flex; align-items: center; justify-content: center;"><i class="ri-facebook-circle-fill" style="font-size: 20px; line-height: 20px; color: rgb(163,163,163);"></i></a>
+          <a href="#" style="width: 32px; height: 32px; border-radius: 96px; box-shadow: inset 0 0 0 1px rgb(235,235,235); display: flex; align-items: center; justify-content: center;"><i class="ri-instagram-fill" style="font-size: 20px; line-height: 20px; color: rgb(163,163,163);"></i></a>
+          <a href="#" style="width: 32px; height: 32px; border-radius: 96px; box-shadow: inset 0 0 0 1px rgb(235,235,235); display: flex; align-items: center; justify-content: center;"><i class="ri-twitter-x-line" style="font-size: 20px; line-height: 20px; color: rgb(163,163,163);"></i></a>
+        </div>
+        <span style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(163,163,163);">2026 Valida SICONFI — Todos os direitos reservados</span>
+      </div>
+      <div style="width: 103px; display: flex; flex-direction: column; gap: 20px; flex-shrink: 0;">
+        <a href="Site GFI Tech.dc.html#solucoes" style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(92,92,92);">Verificações</a>
+        <a href="Site GFI Tech.dc.html" style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(92,92,92);">Como Funciona</a>
+        <a href="Contato.dc.html" style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(92,92,92);">Valores</a>
+        <a href="#" style="font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: -0.006em; color: rgb(92,92,92);">Termos de uso</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://wa.me/5531000000000&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      wa: this.props.whatsapp ?? "https://wa.me/5531000000000",
+      menuDisplay: this.state.menuOpen ? "flex" : "none",
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>
