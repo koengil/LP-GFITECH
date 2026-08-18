@@ -458,17 +458,17 @@
   }
   .pcard {
     border-radius: var(--r-xl);
-    background: var(--neutral-100);
+    background: rgb(46,97,255);
     overflow: hidden;
     height: 448px;
     position: relative;
   }
   .pcard-image {
-    position: absolute; inset: 2px 3px;
-    border-radius: var(--r-xl);
-    background:
-      linear-gradient(rgba(46,97,255,0) 0%, rgba(46,97,255,0.4) 100%),
-      url('./assets/hero-pattern.jpg') center / cover no-repeat;
+    position: absolute; top: 2px; left: 3px; right: 3px; bottom: 198px;
+    border-radius: var(--r-xl) var(--r-xl) 0 0;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
   }
   .pcard-widget {
     position: absolute; left: 13px; right: 13px; bottom: 10px;
@@ -1197,13 +1197,12 @@
           </span>
 
           <h1 class="hero-headline" style="max-width: 966px;">
-            Evite perder pontos no <span style="color:#2E61FF; font-weight:700;">SICONFI</span> por erros que podem ser prevenidos.
+            Evite perder pontos no <span style="color:#2E61FF; font-weight:700;">SICONFI</span> e na <span style="color:#2E61FF; font-weight:700;">CAPAG</span>.
           </h1>
         </div>
 
         <p class="hero-sub">
-          O SICONFIX roda as verificações <span style="color:#364153; font-weight:700;">D1</span>, <span style="color:#364153; font-weight:700;">D2</span>, <span style="color:#364153; font-weight:700;">D3</span> e <span style="color:#364153; font-weight:700;">D4</span> nos seus arquivos antes do envio e
-          entrega um relatório completo para você corrigir com segurança.
+          O SICONFIX realiza todas as verificações do Tesouro Nacional antes do envio, protegendo sua CAPAG e garantindo os benefícios de uma boa qualidade fiscal a seu município.
         </p>
 
         <div class="hero-actions">
@@ -1268,34 +1267,34 @@
 
     <div class="problem-steps">
       <article class="pcard">
-        <div class="pcard-image"></div>
+        <div class="pcard-image" style="background-image: url('./assets/card-01-capag-queda.png');"></div>
         <div class="pcard-widget">
-          <div class="ttl">Ciclo reativo e punitivo</div>
-          <div class="desc">O município envia, o SICONFI reprova, a retificação conta negativamente no D1. O mesmo erro é pago duas vezes.</div>
+          <div class="ttl">Nota CAPAG em queda</div>
+          <div class="desc">Dado inconsistente derruba os indicadores de endividamento, poupança e liquidez. A nota cai e o município perde o aval da União para contratar crédito.</div>
           <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">01</text><defs><filter id="sh"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard-image" style="background-image: url('./assets/imagem 2.png'); background-size: cover; background-position: center;"></div>
+        <div class="pcard-image" style="background-image: url('./assets/card-02-cauc-bloqueado.png'); "></div>
         <div class="pcard-widget">
-          <div class="ttl">Inconsistência invisível</div>
-          <div class="desc">SI + MOV ≠ SF, saldos negativos indevidos, contas sem natureza. Erros que o ERP não detecta mas o SICONFI reprova.</div>
+          <div class="ttl">Sem CAUC, sem repasse</div>
+          <div class="desc">Uma pendência no CAUC bloqueia convênios e transferências voluntárias. Obra parada e emenda travada por causa de um demonstrativo em atraso.</div>
           <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh2)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">02</text><defs><filter id="sh2"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard-image" style="background-image: url('./assets/imagem 3.png'); background-size: cover; background-position: center;"></div>
+        <div class="pcard-image" style="background-image: url('./assets/card-03-ranking-publico.png'); "></div>
         <div class="pcard-widget">
-          <div class="ttl">CAPAG em risco</div>
-          <div class="desc">Pontuação baixa bloqueia crédito, aval da união e transferências; um arquivo mal enviado compromete o orçamento.</div>
+          <div class="ttl">Exposição no ranking</div>
+          <div class="desc">A nota é pública e comparável. Aparecer atrás dos vizinhos no ranking do Tesouro cobra explicação da gestão na imprensa e na Câmara.</div>
           <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh3)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">03</text><defs><filter id="sh3"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard-image" style="background-image: url('./assets/imagem 4.png'); background-size: cover; background-position: center;"></div>
+        <div class="pcard-image" style="background-image: url('./assets/card-04-confiabilidade.png'); "></div>
         <div class="pcard-widget">
-          <div class="ttl">4 docs, zero cruzamento</div>
-          <div class="desc">MSC, DCA, RREO e RGF precisam ser consistentes entre si. Sem validador, é impossível checar manualmente.</div>
+          <div class="ttl">Informação sem confiança</div>
+          <div class="desc">Quando o contador não confia no próprio relatório, o gestor decide no escuro. Insegurança que atravessa o fechamento e chega à mesa do prefeito.</div>
           <span class="num-pill"><svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="24" rx="10" fill="#F7F7F7"/><rect x="6" y="4" width="22" height="16" rx="5" fill="white" filter="url(#sh4)"/><text x="17" y="15.5" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#335CFF">04</text><defs><filter id="sh4"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.08"/></filter></defs></svg></span>
         </div>
       </article>
